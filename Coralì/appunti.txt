@@ -1,0 +1,33 @@
+Home
+
+Menù
+diviso in tot sezioni
+--foto, nome+descrizione piatto, prezzo--eventualmente come slider. valutiamo.
+----anche in versione inglese (ad esempio effetto jQuery etc)
+
+Cantina
+design diverso, perché senza foto e descrizione breve
+eventualmente sfondo con bottiglie di vino/calice
+o comunque sezioni con sfondo a colore alternato per distinguere bianchi/rossi/etc
+
+
+Location
+
+Su di noi
+
+Contatti
+
+
+----font  Morsal + Candara
+
+----colori   bianco, nero, argento, azzurro (considerare sfondo scuro)
+
+
+Godaddy credenziali
+giulia209@hotmail.it
+Cora1ì2022!
+
+
+Wordpress Credenziali
+admin_corali
+Salicornia19gg!
