@@ -51,11 +51,13 @@ motion:
   reveal_final: opacity-100 translate-y-0
   reveal_transition: transition-all duration-700 ease-out
   image_hover: transition duration-700 hover:scale-105
-  hero_image_motion: motion-safe:animate-[pulse_9s_ease-in-out_infinite]
+  hero_image_motion: none
 assets:
-  hero: img/hero.png
-  experience_primary: img/section01.png
-  location: img/locale.png
+  hero: img/home-azzurro/hero.png
+  experience_primary: img/home-azzurro/section01.png
+  gallery_crudo: img/home-azzurro/composizione-25.jpg
+  gallery_risotto: img/home-azzurro/risotto-31.jpg
+  location: img/home-azzurro/locale.png
   dessert_generated: Coralì/immagini/generated/dolce-cheesecake.png
   decorative:
     - Coralì/immagini/corallo.png
@@ -100,7 +102,7 @@ Use the palette sparingly. The dominant read should be stone and slate, with ora
 - The final accented `ì` in Morsal wordmarks is built visually from a normal Morsal `i` plus a small positioned grave mark, because the precomposed `ì` glyph falls back inconsistently in browsers.
 - **Playfair Display** is used for large editorial headings and menu item names.
 - **Montserrat** is used for navigation, labels, buttons, body copy, metadata, and prices.
-- Hero typography on the home page is intentionally reduced to a single centered `Coralì` wordmark over photography, using Morsal, `mix-blend-overlay`, white opacity, and a soft glow to echo the Stitch variant.
+- Hero typography on the home page is intentionally reduced to a single centered `Coralì` wordmark over photography, using Morsal with `mix-blend-overlay` so it feels masked into the image. Do not use a separate normal white duplicate layer.
 - Labels use uppercase, heavy tracking, and small type: usually `text-[0.68rem]`, `font-bold`, `uppercase`, and `tracking-[0.28em]`.
 - Body copy should stay measured and readable: `text-base`, `leading-8`, `tracking-wide`, usually in `text-slate-600`.
 
@@ -128,9 +130,9 @@ The header is fixed, glassy, and minimal.
 
 The current home hero contains only:
 
-- background image `img/hero.png`
+- background image `img/home-azzurro/hero.png`
 - dark slate overlay
-- centered `Coralì` wordmark using Morsal and the Stitch-like combination `mix-blend-overlay`, white text, `opacity-90`, `tracking-wide`, `text-[118px] md:text-[198px]`, and a subtle glow
+- centered `Coralì` wordmark using Morsal with a single `mix-blend-overlay` layer, stable `opacity-95`, and a soft glow so it reads like a mask but remains visible
 - bottom-centered scroll indicator with `Scorri` label and a thin white line
 
 Do not add hero subtitles, CTA buttons, feature copy, or bottom gradients inside the hero unless the design direction changes again. Keep the logo, dark overlay, and scroll indicator.
@@ -169,9 +171,8 @@ Motion is subtle and should not distract from the photography.
 - `Coralì/site.js` removes those classes and adds `opacity-100 translate-y-0` when elements enter view.
 - Respect reduced motion with `motion-reduce:transform-none motion-reduce:opacity-100`.
 - The hero scroll indicator uses a subtle `motion-safe:animate-pulse`.
-- The hero wordmark uses a slow `motion-safe:animate-[pulse_7s_ease-in-out_infinite]` so the logo feels more elegant without becoming busy.
 - Images may scale slightly on hover with `hover:scale-105`.
-- The hero background may use the existing slow pulse animation.
+- The hero background image must remain still; do not apply pulse animation to it.
 
 ## Image Rules
 
