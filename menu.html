@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Menu del Ristorante Coralì: crudi, primi, secondi e dolci di mare contemporanei.">
+  <meta name="description" content="Menu del Ristorante Coralì: antipasti, primi e secondi dalla carta ufficiale.">
   <title>Ristorante Coralì | Menu</title>
   <link rel="icon" href="data:,">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3"></script>
@@ -13,13 +13,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="overflow-x-hidden bg-stone-100 font-['Montserrat'] text-slate-900 antialiased selection:bg-orange-300 selection:text-slate-950">
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-900/10 bg-stone-100/80 text-slate-950 backdrop-blur-xl">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-900/10 bg-stone-100/85 text-slate-950 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
       <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-3xl font-normal leading-none tracking-wide sm:text-[2.35rem]">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
       <nav class="hidden items-center gap-8 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-700 md:flex">
         <a class="transition hover:text-orange-700" href="index.html#esperienza">Esperienza</a>
         <a class="border-b border-slate-950 pb-1 text-slate-950" href="menu.html">Menu</a>
-        <a class="transition hover:text-orange-700" href="#cantina">Cantina</a>
+        <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="index.html#location">Location</a>
       </nav>
       <a href="tel:+390197703829" class="hidden border border-slate-950 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-slate-950 hover:text-white md:inline-flex">Prenota</a>
@@ -32,7 +32,7 @@
       <div class="flex flex-col gap-4">
         <a class="transition hover:text-orange-700" href="index.html#esperienza">Esperienza</a>
         <a class="text-slate-950" href="menu.html">Menu</a>
-        <a class="transition hover:text-orange-700" href="#cantina">Cantina</a>
+        <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="index.html#location">Location</a>
         <a class="border border-slate-950 px-4 py-3 text-center text-slate-950" href="tel:+390197703829">Prenota</a>
       </div>
@@ -40,143 +40,190 @@
   </header>
 
   <main>
-    <section class="relative overflow-hidden px-5 pb-20 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-44">
-      <img src="Coralì/immagini/corallo2.png" alt="" class="pointer-events-none absolute right-0 top-24 w-72 opacity-10 sm:w-96" aria-hidden="true">
-      <div class="mx-auto max-w-7xl">
-        <div class="mx-auto max-w-4xl text-center opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
-          <p class="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.3em] text-orange-700">Menu degustazione e carta</p>
-          <h1 class="font-['Playfair_Display'] text-5xl font-semibold leading-tight text-slate-950 sm:text-7xl">Il mare, composto con calma.</h1>
-          <p class="mx-auto mt-7 max-w-2xl text-base leading-8 tracking-wide text-slate-600">Una selezione essenziale di crudi, primi, secondi e dolci. La carta cambia con il pescato e con la stagione, mantenendo una grammatica nitida e mediterranea.</p>
+    <section class="relative overflow-hidden px-5 pb-20 pt-36 sm:px-8 lg:px-10 lg:pb-24 lg:pt-40">
+      <img src="img/decor/corallo-azzurro-rami-sottili.png" alt="" class="pointer-events-none absolute right-0 top-24 w-72 opacity-10 sm:w-96" aria-hidden="true">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
+        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-6" data-reveal>
+          <p class="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.3em] text-orange-700">Carta ufficiale</p>
+          <h1 class="font-['Playfair_Display'] text-5xl font-semibold leading-tight text-slate-950 sm:text-7xl">Menu</h1>
+          <p class="mt-7 max-w-2xl text-base leading-8 tracking-wide text-slate-600">Antipasti, primi e secondi tratti dal Menu Coralì Esterno.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="Coralì/Menù Coralì Esterno.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-transparent hover:text-slate-950">Apri PDF</a>
+            <a href="#carta" class="inline-flex items-center justify-center border border-slate-950/25 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:border-slate-950">Leggi la carta</a>
+          </div>
         </div>
-        <div class="relative mt-16 overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
-          <img src="Coralì/editate pt.2/editate pt.2/37.jpg" alt="Piatto di mare su tavola elegante" class="h-[380px] w-full object-cover opacity-90 transition duration-700 hover:scale-105 sm:h-[520px]">
+        <div class="relative overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5 lg:col-start-8" data-reveal>
+          <img src="img/photo/plates/hero.png" alt="Piatto di mare del Ristorante Coralì" class="aspect-[4/5] h-full w-full object-cover opacity-90 transition duration-700 hover:scale-105">
           <div class="absolute inset-4 border border-white/25"></div>
         </div>
       </div>
     </section>
 
-    <section class="px-5 pb-24 sm:px-8 lg:px-10">
-      <div class="mx-auto max-w-7xl space-y-28">
-        <section class="grid gap-10 lg:grid-cols-12 lg:items-center">
-          <div class="relative overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
-            <img src="Coralì/editate/editate/28.jpg" alt="Pasta alle vongole e vegetali marini" class="aspect-[4/5] h-full w-full object-cover transition duration-700 hover:scale-105">
-          </div>
-          <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-6 lg:col-start-7" data-reveal>
-            <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Crudi e antipasti</p>
-            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Aperture minerali e fresche.</h2>
-            <div class="mt-10 space-y-8">
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Tagliere di salumi di mare</h3>
-                  <span class="text-sm font-semibold text-slate-500">28</span>
-                </div>
-                <p class="mt-3 leading-7 text-slate-600">Ricciola, salmone, palamita, tonno e pesce spada stagionati internamente, con confetture homemade e giardiniera.</p>
-              </article>
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Crudo di mare</h3>
-                  <span class="text-sm font-semibold text-slate-500">32</span>
-                </div>
-                <p class="mt-3 leading-7 text-slate-600">Selezione del giorno, agrumi, olio leggero e sale marino. Pulito, diretto, essenziale.</p>
-              </article>
+    <section id="carta" class="px-5 pb-24 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-12">
+          <aside class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-3" data-reveal>
+            <div class="sticky top-28 border-y border-slate-900/10 py-6">
+              <p class="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Sezioni</p>
+              <nav class="mt-6 flex flex-col gap-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">
+                <a class="transition hover:text-slate-950" href="#antipasti">Antipasti</a>
+                <a class="transition hover:text-slate-950" href="#primi">Primi</a>
+                <a class="transition hover:text-slate-950" href="#secondi">Secondi</a>
+              </nav>
+              <a href="Coralì/Menù Coralì Esterno.pdf" target="_blank" rel="noopener" class="mt-8 inline-flex border-b border-slate-950 pb-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:border-orange-700 hover:text-orange-700">PDF originale</a>
             </div>
-          </div>
-        </section>
+          </aside>
 
-        <section class="grid gap-10 lg:grid-cols-12 lg:items-center">
-          <div class="order-2 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:order-1 lg:col-span-6" data-reveal>
-            <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">I primi</p>
-            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Paste e risotti di costa.</h2>
-            <div class="mt-10 space-y-8">
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Paccheri al guanciale di tonno</h3>
-                  <span class="text-sm font-semibold text-slate-500">24</span>
+          <div class="space-y-16 lg:col-span-8 lg:col-start-5">
+            <section id="antipasti" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+              <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
+                <div>
+                  <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">In apertura</p>
+                  <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Antipasti</h2>
                 </div>
-                <p class="mt-3 leading-7 text-slate-600">Crema di uovo cotto a bassa temperatura, porri croccanti e julienne di pecorino romano DOP.</p>
-              </article>
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Linguine ai ricci</h3>
-                  <span class="text-sm font-semibold text-slate-500">26</span>
-                </div>
-                <p class="mt-3 leading-7 text-slate-600">Linguine trafilate, ricci freschi e fondo marino leggero. Sapidità piena, finale pulito.</p>
-              </article>
-            </div>
-          </div>
-          <div class="relative order-1 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:order-2 lg:col-span-5 lg:col-start-8" data-reveal>
-            <img src="Coralì/editate pt.2/editate pt.2/35.jpg" alt="Paccheri serviti in piatto scuro" class="aspect-square w-full object-cover transition duration-700 hover:scale-105">
-            <img src="Coralì/immagini/alga2.png" alt="" class="pointer-events-none absolute -bottom-10 right-0 w-28 opacity-35" aria-hidden="true">
-          </div>
-        </section>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">6 piatti</span>
+              </div>
+              <div class="space-y-7">
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Tagliere di salumi di mare</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Nostra produzione, confetture di frutta e verdura homemade, crostini di pane ai 7 cereali, rivisitazione di giardiniera.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Sfera di gambero viola del golfo</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">16,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Ripiena di burrata affumicata e lime, sfoglie di bottarga di Cabras, carciofo in oliocottura, polvere di pomodori camoni.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">La tartare di tonno dentro al calamaro</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Calamaro del mediterraneo scottato al vapore ripieno di tartare di tonno, olive taggiasche e pinoli tostati, aria all'aneto e riduzione di datterino giallo.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Quenelle di baccalà mantecato</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">12,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Nuvola di pane, confettura di cipolla rossa, polvere di olive nere e caviale al basilico.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Uovo cotto a bassa temperatura</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">10,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Su fondutina al raschera tartufato, puntarelle croccanti, cialda di pasta fillo e semi di papavero.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Girello di vitello al “rosa”</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">13,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Salsa tonnata all'antica, fiori di cappero, cialda di riso soffiato alla barbabietola, germogli, aria di cipolla di Tropea.</p>
+                </article>
+              </div>
+            </section>
 
-        <section class="grid gap-10 lg:grid-cols-12 lg:items-center">
-          <div class="relative overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-7" data-reveal>
-            <img src="Coralì/editate pt.2/editate pt.2/43.jpg" alt="Secondo piatto di pesce con verdure" class="aspect-[16/10] h-full w-full object-cover transition duration-700 hover:scale-105">
-          </div>
-          <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
-            <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">I secondi</p>
-            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Tagli importanti, cotture misurate.</h2>
-            <div class="mt-10 space-y-8">
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Chateaubriand di tonno</h3>
-                  <span class="text-sm font-semibold text-slate-500">30</span>
+            <section id="primi" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+              <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
+                <div>
+                  <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Paste e riso</p>
+                  <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Primi</h2>
                 </div>
-                <p class="mt-3 leading-7 text-slate-600">Taglio nobile, rosolatura precisa, fondo vegetale e accenti agrumati.</p>
-              </article>
-              <article class="border-b border-slate-900/10 pb-7">
-                <div class="flex items-baseline justify-between gap-6">
-                  <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Catalana di astice</h3>
-                  <span class="text-sm font-semibold text-slate-500">38</span>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">4 piatti</span>
+              </div>
+              <div class="space-y-7">
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Paccheri al guanciale di tonno affumicato</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">14,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Crema di uovo cotto a bassa temperatura, pepe nero tostato, porri croccanti e julienne di pecorino romano DOP.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Spaghetti con fondente di pane aromatico</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">16,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Erbe e aglio nero, scorza di lime, lime candito, vongole veraci e cristalli di prezzemolo.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Risotto al mandarino</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Salicornia e salmone confit, nocciole tostate e finocchietto in due consistenze.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Ravioli di borragine</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">13,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Nostra produzione, salsa di noci, julienne di crudo di Parma croccante, scaglie di reggiano DOP e crumble di noci.</p>
+                </article>
+              </div>
+            </section>
+
+            <section id="secondi" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+              <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
+                <div>
+                  <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Dalla cucina</p>
+                  <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Secondi</h2>
                 </div>
-                <p class="mt-3 leading-7 text-slate-600">Astice, verdure mediterranee, olio profumato e acidità sottile.</p>
-              </article>
-            </div>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">4 piatti</span>
+              </div>
+              <div class="space-y-7">
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Arrosticini di pesce spada</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">17,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Affumicati al rosmarino e legno di mandorlo, petali di cipolla rossa marinata, caponatina di melanzane e salsa teriyaki.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Cestino di seppia croccante</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Crudo di carciofi e bottarga, fondente di patate al nero, gel di lamponi.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Brasato di tonno al Nebbiolo</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Le sue verdure, polentina arrostita, aria di cipolla rossa.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Medaglioni rollè di coniglio</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Con il suo fondo bruno, pinoli, olive riviera, guanciale croccante, pomodorino confit e spuma al basilico cotta e cruda.</p>
+                </article>
+              </div>
+            </section>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="relative overflow-hidden bg-stone-200/80 px-6 py-12 sm:px-10 lg:px-14" id="cantina">
-          <img src="Coralì/immagini/corallo4.png" alt="" class="pointer-events-none absolute -bottom-20 left-0 w-72 opacity-10" aria-hidden="true">
-          <div class="relative grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
-              <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-sky-800">Cantina</p>
-              <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950">Bianchi tesi, bolle sottili, rossi leggeri.</h2>
-              <p class="mt-6 leading-8 text-slate-600">La selezione accompagna il mare con vini minerali, verticali e mai invasivi. Una carta compatta, pensata per servizio e abbinamento.</p>
-            </div>
-            <div class="grid gap-4 text-sm text-slate-700 sm:grid-cols-3 lg:col-span-6 lg:col-start-7">
-              <div class="border border-slate-900/10 bg-stone-100 p-6">
-                <p class="font-['Playfair_Display'] text-2xl text-slate-950">Bianchi</p>
-                <p class="mt-3 leading-6">Sicilia, Etna, coste mediterranee.</p>
-              </div>
-              <div class="border border-slate-900/10 bg-stone-100 p-6">
-                <p class="font-['Playfair_Display'] text-2xl text-slate-950">Metodo</p>
-                <p class="mt-3 leading-6">Bolle asciutte e acidità precisa.</p>
-              </div>
-              <div class="border border-slate-900/10 bg-stone-100 p-6">
-                <p class="font-['Playfair_Display'] text-2xl text-slate-950">Rossi</p>
-                <p class="mt-3 leading-6">Serviti freschi, corpo elegante.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="grid gap-10 lg:grid-cols-12 lg:items-center">
-          <div class="order-2 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:order-1 lg:col-span-5 lg:col-start-2" data-reveal>
-            <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">I dolci</p>
-            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Finale morbido, agrumato, leggero.</h2>
-            <article class="mt-10 border-b border-slate-900/10 pb-7">
-              <div class="flex items-baseline justify-between gap-6">
-                <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Cheesecake mediterranea</h3>
-                <span class="text-sm font-semibold text-slate-500">10</span>
-              </div>
-              <p class="mt-3 leading-7 text-slate-600">Crema soffice, nota agrumata e finitura calda color corallo.</p>
-            </article>
-          </div>
-          <div class="order-1 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:order-2 lg:col-span-4 lg:col-start-8" data-reveal>
-            <img src="Coralì/immagini/generated/dolce-cheesecake.png" alt="Cheesecake mediterranea su piatto chiaro" class="aspect-[4/3] w-full object-cover transition duration-700 hover:scale-105">
-          </div>
-        </section>
+    <section class="bg-stone-200/70 px-5 py-16 sm:px-8 lg:px-10">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12 lg:items-center">
+        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
+          <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-sky-800">Documento originale</p>
+          <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950">Menu Coralì Esterno</h2>
+          <p class="mt-6 leading-8 text-slate-600">La carta web riprende il contenuto del PDF esterno. Il documento resta disponibile per consultazione e stampa.</p>
+        </div>
+        <div class="flex flex-col gap-4 sm:flex-row lg:col-span-6 lg:col-start-7">
+          <a href="Coralì/Menù Coralì Esterno.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-transparent hover:text-slate-950">Apri menu PDF</a>
+          <a href="carta-vini.html" class="inline-flex items-center justify-center border border-slate-950/25 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:border-slate-950">Carta vini</a>
+        </div>
       </div>
     </section>
   </main>
@@ -185,17 +232,58 @@
     <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 text-sm text-slate-600 md:flex-row md:items-center">
       <div>
         <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-4xl font-normal leading-none tracking-wide text-slate-950">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
-        <p class="mt-3">Menu stagionale, cucina di mare contemporanea. Corso Cristoforo Colombo, 86, Varazze.</p>
+        <p class="mt-3">Menu ufficiale. Corso Cristoforo Colombo, 86, Varazze.</p>
       </div>
       <nav class="flex flex-wrap gap-5">
         <a class="transition hover:text-orange-700" href="index.html">Home</a>
-        <a class="transition hover:text-orange-700" href="#cantina">Cantina</a>
+        <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="tel:+390197703829">019 770 3829</a>
         <a class="transition hover:text-orange-700" href="#">Privacy</a>
       </nav>
     </div>
   </footer>
 
-  <script src="Coralì/site.js"></script>
+  <script>
+    const menuToggle = document.querySelector("[data-menu-toggle]");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileMenu.classList.toggle("hidden", isOpen);
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    }
+
+    const revealItems = document.querySelectorAll("[data-reveal]");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.remove("opacity-0", "translate-y-8");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => {
+        item.classList.remove("opacity-0", "translate-y-8");
+        item.classList.add("opacity-100", "translate-y-0");
+      });
+    }
+  </script>
 </body>
 </html>
