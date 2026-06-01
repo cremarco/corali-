@@ -26,9 +26,12 @@ colors:
   coral-selection: orange-300
   maritime-accent: sky-800
 typography:
+  brand:
+    fontFamily: Morsal
+    usage: all Coralì branding and wordmarks in header, hero, and footer
   display:
     fontFamily: Playfair Display
-    usage: hero logo, editorial headlines, menu item names
+    usage: editorial headlines, menu item names
   body:
     fontFamily: Montserrat
     usage: body copy, nav, labels, buttons
@@ -36,7 +39,7 @@ typography:
     desktop: text-[15rem]
     tablet: sm:text-[10rem]
     mobile: text-[6.5rem]
-    class: font-['Playfair_Display'] font-semibold leading-none tracking-tight
+    class: font-['Morsal'] font-normal leading-none tracking-wide motion-safe:animate-[pulse_7s_ease-in-out_infinite]
 layout:
   container: max-w-7xl
   page-padding: px-5 sm:px-8 lg:px-10
@@ -51,7 +54,8 @@ motion:
   hero_image_motion: motion-safe:animate-[pulse_9s_ease-in-out_infinite]
 assets:
   hero: img/hero.png
-  location: Coralì/immagini/locale.jpg
+  experience_primary: img/section01.png
+  location: img/locale.png
   dessert_generated: Coralì/immagini/generated/dolce-cheesecake.png
   decorative:
     - Coralì/immagini/corallo.png
@@ -75,7 +79,7 @@ The visual system is intentionally minimal. Most sections are built from large p
 
 - Use Tailwind CSS 4.3 through `@tailwindcss/browser@4.3`.
 - Do not add `tailwind.config`, custom CSS, inline `style=`, or `<style>` blocks.
-- Styling must be expressed with Tailwind classes only, including arbitrary values such as `font-['Playfair_Display']`, `text-[15rem]`, and `animate-[pulse_9s_ease-in-out_infinite]`.
+- Styling must be expressed with Tailwind classes only, including arbitrary values such as `font-['Playfair_Display']`, `font-['Morsal']`, `text-[15rem]`, and `animate-[pulse_9s_ease-in-out_infinite]`.
 - JavaScript is allowed only for behavior in `Coralì/site.js`: mobile menu state and IntersectionObserver reveal animations.
 - Use local assets from `Coralì/`; do not reference remote generated image URLs.
 
@@ -92,9 +96,11 @@ Use the palette sparingly. The dominant read should be stone and slate, with ora
 
 ## Typography
 
-- **Playfair Display** is used for the brand name, hero title, large editorial headings, and menu item names.
+- **Morsal** is used for every brand lockup and wordmark: header `Coralì`, hero `Coralì`, and footer `Coralì`. Do not prefix the visible logo with `Ristorante`.
+- The final accented `ì` in Morsal wordmarks is built visually from a normal Morsal `i` plus a small positioned grave mark, because the precomposed `ì` glyph falls back inconsistently in browsers.
+- **Playfair Display** is used for large editorial headings and menu item names.
 - **Montserrat** is used for navigation, labels, buttons, body copy, metadata, and prices.
-- Hero typography on the home page is intentionally reduced to a single centered `Coralì` wordmark over photography, using `mix-blend-overlay` and white opacity to echo the Stitch variant.
+- Hero typography on the home page is intentionally reduced to a single centered `Coralì` wordmark over photography, using Morsal, `mix-blend-overlay`, white opacity, and a soft glow to echo the Stitch variant.
 - Labels use uppercase, heavy tracking, and small type: usually `text-[0.68rem]`, `font-bold`, `uppercase`, and `tracking-[0.28em]`.
 - Body copy should stay measured and readable: `text-base`, `leading-8`, `tracking-wide`, usually in `text-slate-600`.
 
@@ -124,11 +130,10 @@ The current home hero contains only:
 
 - background image `img/hero.png`
 - dark slate overlay
-- soft overlapping transition: long bottom gradient (`h-40 from-stone-100 via-stone-100/45 to-transparent`) and the first section pulled upward with negative margin
-- centered `Coralì` wordmark using the Stitch-like combination `mix-blend-overlay`, white text, `opacity-90`, `tracking-tighter`, `text-[120px] md:text-[200px]`
+- centered `Coralì` wordmark using Morsal and the Stitch-like combination `mix-blend-overlay`, white text, `opacity-90`, `tracking-wide`, `text-[118px] md:text-[198px]`, and a subtle glow
 - bottom-centered scroll indicator with `Scorri` label and a thin white line
 
-Do not add hero subtitles, CTA buttons inside the hero, or feature copy unless the design direction changes again. The global header and scroll indicator may remain visible above the hero image.
+Do not add hero subtitles, CTA buttons, feature copy, or bottom gradients inside the hero unless the design direction changes again. Keep the logo, dark overlay, and scroll indicator.
 
 ### Buttons and Links
 
@@ -164,6 +169,7 @@ Motion is subtle and should not distract from the photography.
 - `Coralì/site.js` removes those classes and adds `opacity-100 translate-y-0` when elements enter view.
 - Respect reduced motion with `motion-reduce:transform-none motion-reduce:opacity-100`.
 - The hero scroll indicator uses a subtle `motion-safe:animate-pulse`.
+- The hero wordmark uses a slow `motion-safe:animate-[pulse_7s_ease-in-out_infinite]` so the logo feels more elegant without becoming busy.
 - Images may scale slightly on hover with `hover:scale-105`.
 - The hero background may use the existing slow pulse animation.
 
