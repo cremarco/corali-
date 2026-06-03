@@ -6,7 +6,7 @@
   <meta name="description" content="Carta dei vini del Ristorante Coralì: bianchi, rosé, bollicine e rossi selezionati per accompagnare la cucina di mare.">
   <title>Ristorante Coralì | Carta vini</title>
   <link rel="icon" href="data:,">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3"></script>
+  <script src="vendor/tailwind-browser.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.cdnfonts.com/css/morsal" rel="stylesheet">
@@ -49,7 +49,7 @@
           <p class="mt-7 max-w-2xl text-base leading-8 tracking-wide text-slate-600">Bianchi verticali, bollicine asciutte, rosé mediterranei e rossi eleganti. La selezione segue la stessa misura della cucina: bottiglie leggibili, servizio preciso, abbinamenti senza invadenza.</p>
           <div class="mt-10 flex flex-col gap-3 sm:flex-row">
             <a href="#carta" class="inline-flex justify-center border border-slate-950 bg-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:bg-transparent hover:text-slate-950">Leggi la carta</a>
-            <a href="Coralì/Carta%20Vini%20Dentro%20Ufficiale.pdf" target="_blank" rel="noopener" class="inline-flex justify-center border border-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:bg-slate-950 hover:text-white">Apri il PDF</a>
+            <a href="menu.html" class="inline-flex justify-center border border-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:bg-slate-950 hover:text-white">Menu cucina</a>
           </div>
         </div>
         <div class="relative opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5 lg:col-start-8" data-reveal>
@@ -300,19 +300,14 @@
 
     <section class="bg-stone-200/70 px-5 py-20 sm:px-8 lg:px-10">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
-        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
-          <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-sky-800">Carta ufficiale</p>
-          <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Consulta anche il documento originale.</h2>
-          <p class="mt-6 leading-8 text-slate-600">La versione PDF resta disponibile per una lettura completa o per il download prima della visita.</p>
-          <a href="Coralì/Carta%20Vini%20Dentro%20Ufficiale.pdf" download class="mt-9 inline-flex border border-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:bg-slate-950 hover:text-white">Scarica PDF</a>
+        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-6" data-reveal>
+          <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-sky-800">Menu cucina</p>
+          <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Abbina la carta vini ai piatti della cucina.</h2>
+          <p class="mt-6 leading-8 text-slate-600">La pagina menu raccoglie antipasti, primi e secondi della carta Coralì, con descrizioni e prezzi.</p>
         </div>
-        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-7" data-reveal>
-          <object data="Coralì/Carta%20Vini%20Dentro%20Ufficiale.pdf#toolbar=0" type="application/pdf" class="h-[620px] w-full border border-slate-900/10 bg-stone-100">
-            <div class="p-8 text-slate-700">
-              <p>Il browser non mostra l'anteprima del PDF.</p>
-              <a href="Coralì/Carta%20Vini%20Dentro%20Ufficiale.pdf" target="_blank" rel="noopener" class="mt-4 inline-flex border-b border-slate-950 pb-1 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:border-orange-700 hover:text-orange-700">Apri carta vini</a>
-            </div>
-          </object>
+        <div class="flex flex-col gap-4 sm:flex-row lg:col-span-5 lg:col-start-8">
+          <a href="menu.html" class="inline-flex justify-center border border-slate-950 bg-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:bg-transparent hover:text-slate-950">Apri menu</a>
+          <a href="tel:+390197703829" class="inline-flex justify-center border border-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:bg-slate-950 hover:text-white">Prenota</a>
         </div>
       </div>
     </section>
@@ -327,7 +322,6 @@
       <nav class="flex flex-wrap gap-5">
         <a class="transition hover:text-orange-700" href="index.html">Home</a>
         <a class="transition hover:text-orange-700" href="menu.html">Menu</a>
-        <a class="transition hover:text-orange-700" href="Coralì/Carta%20Vini%20Dentro%20Ufficiale.pdf" target="_blank" rel="noopener">PDF vini</a>
         <a class="transition hover:text-orange-700" href="tel:+390197703829">019 770 3829</a>
         <a class="transition hover:text-orange-700" href="#">Privacy</a>
       </nav>
