@@ -145,6 +145,47 @@
       to { opacity: 1; }
     }
 
+    @keyframes room-slide-fade {
+      0%, 5% {
+        opacity: 0;
+        transform: scale(1.06);
+      }
+      8%, 30% {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+      38%, 100% {
+        opacity: 0;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes room-indicator-fade {
+      0%, 5% {
+        opacity: 0.35;
+      }
+      8%, 30% {
+        opacity: 0.85;
+      }
+      38%, 100% {
+        opacity: 0.35;
+      }
+    }
+
+    @keyframes room-indicator-progress {
+      0%, 5% {
+        transform: scaleX(0);
+      }
+      8%, 30% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+      38%, 100% {
+        opacity: 0;
+        transform: scaleX(1);
+      }
+    }
+
     .hero-slides {
       opacity: 0;
       filter: saturate(0.85) contrast(0.94) brightness(0.7);
@@ -357,6 +398,77 @@
       animation: hero-scroll-reveal 800ms ease 5150ms forwards;
     }
 
+    .room-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.02);
+      animation: room-slide-fade 24s cubic-bezier(0.45, 0, 0.15, 1) infinite;
+      backface-visibility: hidden;
+      will-change: opacity, transform;
+    }
+
+    .room-slide:first-child {
+      opacity: 1;
+      animation-delay: -1.7s;
+    }
+
+    .room-slide:nth-child(2) {
+      animation-delay: 4.3s;
+    }
+
+    .room-slide:nth-child(3) {
+      animation-delay: 10.3s;
+    }
+
+    .room-slide:nth-child(4) {
+      animation-delay: 16.3s;
+    }
+
+    .room-slide-indicator {
+      position: relative;
+      height: 1px;
+      width: 2rem;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.35);
+      opacity: 0.35;
+      transform-origin: left;
+      animation: room-indicator-fade 24s cubic-bezier(0.45, 0, 0.15, 1) infinite;
+    }
+
+    .room-slide-indicator::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: room-indicator-progress 24s linear infinite;
+    }
+
+    .room-slide-indicator:first-child,
+    .room-slide-indicator:first-child::after {
+      animation-delay: -1.7s;
+    }
+
+    .room-slide-indicator:nth-child(2),
+    .room-slide-indicator:nth-child(2)::after {
+      animation-delay: 4.3s;
+    }
+
+    .room-slide-indicator:nth-child(3),
+    .room-slide-indicator:nth-child(3)::after {
+      animation-delay: 10.3s;
+    }
+
+    .room-slide-indicator:nth-child(4),
+    .room-slide-indicator:nth-child(4)::after {
+      animation-delay: 16.3s;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-slides {
         opacity: 1;
@@ -405,6 +517,29 @@
       .hero-logo-slogan {
         display: none;
       }
+
+      .room-slide {
+        animation: none;
+        opacity: 0;
+        transform: none;
+      }
+
+      .room-slide:first-child {
+        opacity: 1;
+      }
+
+      .room-slide-indicator,
+      .room-slide-indicator::after {
+        animation: none;
+      }
+
+      .room-slide-indicator:first-child {
+        opacity: 0.85;
+      }
+
+      .room-slide-indicator:first-child::after {
+        transform: scaleX(1);
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -433,7 +568,7 @@
           "servesCuisine": ["Cucina di mare", "Cucina contemporanea", "Cucina ligure"],
           "priceRange": "€€",
           "image": [
-            "https://www.coralivarazze.it/img/photo/room/locale.png",
+            "https://www.coralivarazze.it/img/photo/room/sala-volta-mattoni.jpg",
             "https://www.coralivarazze.it/img/photo/hero/hero-purple-crisp-saucer.png",
             "https://www.coralivarazze.it/img/photo/plates/25.png"
           ],
@@ -579,17 +714,22 @@
       <div class="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
         <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5 lg:col-start-2" data-reveal>
           <p class="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Eleganza mediterranea</p>
-          <h2 class="font-['Playfair_Display'] text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">Essenziale, marino, profondamente contemporaneo.</h2>
+          <h2 class="font-['Playfair_Display'] text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">Essenziale, marino, profondamente contemporaneo</h2>
           <p class="mt-8 text-base leading-8 tracking-wide text-slate-600">Coralì lavora su materia prima, stagionalità e servizio discreto. Ogni piatto nasce da ingredienti scelti con cura e viene composto con precisione.</p>
           <p class="mt-5 text-base leading-8 tracking-wide text-slate-600">La sala ti accompagna in una esperienza unica: pietra, luce soffusa, dettagli argento e accenti azzurri che richiamano il mare.</p>
-          <div class="mt-10 grid grid-cols-2 border-y border-slate-900/10 py-6 text-sm text-slate-700">
-            <div>
-              <p class="font-['Playfair_Display'] text-4xl text-slate-950">2025</p>
-              <p class="mt-2 uppercase tracking-[0.18em]">Travellers' Choice</p>
+          <div class="mt-10 grid grid-cols-2 items-start border-y border-slate-900/10 py-6 text-sm text-slate-700">
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-end gap-x-3 gap-y-1">
+                <p class="font-['Playfair_Display'] text-4xl text-slate-950">2025</p>
+                <img width="512" height="78" src="img/logo/tripadvisor-2025.svg" alt="Tripadvisor" class="mb-1 h-auto w-20 shrink-0 sm:w-24">
+              </div>
+              <p class="mt-2 min-h-6 text-[0.66rem] uppercase tracking-[0.06em] sm:text-sm sm:tracking-[0.1em]">
+                Travellers' Choice
+              </p>
             </div>
-            <div>
+            <div class="min-w-0">
               <p class="font-['Playfair_Display'] text-4xl text-slate-950">Varazze</p>
-              <p class="mt-2 uppercase tracking-[0.18em]">Cucina di costa</p>
+              <p class="mt-2 min-h-6 uppercase tracking-[0.18em]">Arte in cucina</p>
             </div>
           </div>
         </div>
@@ -609,7 +749,7 @@
         <div class="mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
             <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">La materia in immagini</p>
-            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">La materia prima come paesaggio.</h2>
+            <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">La materia prima come protagonista</h2>
           </div>
           <a href="menu.html" class="w-max border-b border-slate-950 pb-1 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:border-orange-700 hover:text-orange-700">Vai al menu</a>
         </div>
@@ -619,7 +759,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/15 to-transparent"></div>
             <div class="absolute bottom-0 left-0 max-w-lg p-7 text-white sm:p-9">
               <p class="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.26em] text-orange-200">La firma</p>
-              <h3 class="font-['Playfair_Display'] text-3xl font-semibold">Crudi, emulsioni, vegetali marini</h3>
+              <h3 class="font-['Playfair_Display'] text-3xl font-semibold">Crudi, emulsioni, vegetali</h3>
               <p class="mt-3 text-sm leading-6 text-white/75">Tagli puliti, acidità misurate e una palette che lascia parlare il pesce.</p>
             </div>
           </article>
@@ -638,14 +778,23 @@
     </section>
 
     <section id="location" class="grid bg-stone-100 lg:min-h-screen lg:grid-cols-2">
-      <div class="relative min-h-[420px] overflow-hidden bg-slate-900 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
-        <img width="1672" height="941" src="img/photo/room/locale.png" alt="Sala del Ristorante Coralì con volta in mattoni e tavoli azzurri" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+      <div class="relative min-h-[420px] overflow-hidden bg-slate-900 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal role="img" aria-label="Sala del Ristorante Coralì con volta in mattoni, tavoli apparecchiati e luce soffusa">
+        <img width="3072" height="4096" src="img/photo/room/sala-volta-mattoni.jpg" alt="" class="room-slide" aria-hidden="true" decoding="async" loading="lazy">
+        <img width="3072" height="4096" src="img/photo/room/sala-tavolo-intimo.jpg" alt="" class="room-slide" aria-hidden="true" decoding="async" loading="lazy">
+        <img width="3072" height="4096" src="img/photo/room/sala-prospettiva-volta.jpg" alt="" class="room-slide" aria-hidden="true" decoding="async" loading="lazy">
+        <img width="3072" height="4096" src="img/photo/room/sala-volta-frontale.jpg" alt="" class="room-slide" aria-hidden="true" decoding="async" loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/35 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 flex gap-2" aria-hidden="true">
+          <span class="room-slide-indicator"></span>
+          <span class="room-slide-indicator"></span>
+          <span class="room-slide-indicator"></span>
+          <span class="room-slide-indicator"></span>
+        </div>
       </div>
       <div id="prenota" class="flex items-center px-5 py-20 sm:px-8 lg:px-16">
         <div class="max-w-xl opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
           <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Location e prenotazioni</p>
-          <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Una sala raccolta per una cucina precisa.</h2>
+          <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Una sala raccolta per una cena intima</h2>
           <div class="mt-10 space-y-8 text-slate-700">
             <div>
               <p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-slate-950">Orari</p>
