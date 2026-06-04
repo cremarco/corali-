@@ -1,74 +1,121 @@
-const menuToggle = document.querySelector("[data-menu-toggle]");
-const mobileMenu = document.querySelector("[data-mobile-menu]");
+(() => {
+  "use strict";
 
-if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    mobileMenu.classList.toggle("hidden", isOpen);
-  });
+  /* ---------------------------------------------------------------------------
+   * Mobile menu
+   * ------------------------------------------------------------------------- */
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
 
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menuToggle.setAttribute("aria-expanded", "false");
-      mobileMenu.classList.add("hidden");
+  if (menuToggle && mobileMenu) {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+
+    const isMenuOpen = () => menuToggle.getAttribute("aria-expanded") === "true";
+
+    const setMenu = (open) => {
+      menuToggle.setAttribute("aria-expanded", String(open));
+      mobileMenu.classList.toggle("hidden", !open);
+    };
+
+    menuToggle.addEventListener("click", () => setMenu(!isMenuOpen()));
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
     });
-  });
-}
 
-const revealItems = document.querySelectorAll("[data-reveal]");
+    // Close on Escape and return focus to the toggle.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && isMenuOpen()) {
+        setMenu(false);
+        menuToggle.focus();
+      }
+    });
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.remove("opacity-0", "translate-y-8");
-        entry.target.classList.add("opacity-100", "translate-y-0");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.14 }
-  );
+    // Close when clicking outside the menu or the toggle.
+    document.addEventListener("click", (event) => {
+      if (!isMenuOpen()) return;
+      if (menuToggle.contains(event.target) || mobileMenu.contains(event.target)) return;
+      setMenu(false);
+    });
 
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => {
+    // Reset the menu state when growing to the desktop breakpoint.
+    const handleDesktopChange = (event) => {
+      if (event.matches) setMenu(false);
+    };
+
+    if (typeof desktopQuery.addEventListener === "function") {
+      desktopQuery.addEventListener("change", handleDesktopChange);
+    } else if (typeof desktopQuery.addListener === "function") {
+      desktopQuery.addListener(handleDesktopChange);
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Scroll reveal
+   * ------------------------------------------------------------------------- */
+  const revealItems = document.querySelectorAll("[data-reveal]");
+
+  const revealNow = (item) => {
     item.classList.remove("opacity-0", "translate-y-8");
     item.classList.add("opacity-100", "translate-y-0");
-  });
-}
+  };
 
-const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
-const heroMaskSlides = Array.from(document.querySelectorAll("[data-hero-mask-slide]"));
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          revealNow(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14 }
+    );
 
-if (heroSlides.length > 1) {
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach(revealNow);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Hero slideshow (homepage only)
+   * ------------------------------------------------------------------------- */
+  const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
+  const heroMaskSlides = Array.from(document.querySelectorAll("[data-hero-mask-slide]"));
+
+  if (heroSlides.length <= 1) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const now = () => (window.performance ? window.performance.now() : Date.now());
+
   const heroRoot = heroSlides[0].closest("[data-hero-slideshow]");
   const parsedIntroDelay = Number.parseInt(heroRoot?.dataset.heroIntroDelay || "0", 10);
   const heroIntroDelay = Number.isFinite(parsedIntroDelay) ? parsedIntroDelay : 0;
-  const heroIntroStartedAt = window.performance ? window.performance.now() : Date.now();
+  const heroIntroStartedAt = now();
   const motions = ["in", "out", "drift"];
   const slideDelay = 6800;
   const exitCleanupDelay = 1900;
+
   let activeIndex = heroSlides.findIndex((slide) => slide.classList.contains("is-active"));
   let slideTimer;
   let introTimer;
-  let isPreparingSlide = false;
   let initialSlidesReady;
 
   if (activeIndex < 0) activeIndex = 0;
 
+  const motionFor = (index) => motions[index % motions.length];
+  const heroDurationFor = (index) => `${10800 + (index % 4) * 450}ms`;
+
   heroSlides.forEach((slide, index) => {
-    slide.dataset.motion = motions[index % motions.length];
-    slide.style.setProperty("--hero-duration", `${10800 + (index % 4) * 450}ms`);
+    slide.dataset.motion = motionFor(index);
+    slide.style.setProperty("--hero-duration", heroDurationFor(index));
     slide.classList.toggle("is-active", index === activeIndex);
 
     const maskSlide = heroMaskSlides[index];
 
     if (maskSlide) {
-      maskSlide.dataset.motion = motions[index % motions.length];
-      maskSlide.style.setProperty("--hero-duration", `${10800 + (index % 4) * 450}ms`);
+      maskSlide.dataset.motion = motionFor(index);
+      maskSlide.style.setProperty("--hero-duration", heroDurationFor(index));
       maskSlide.classList.toggle("is-active", index === activeIndex);
     }
   });
@@ -97,10 +144,8 @@ if (heroSlides.length > 1) {
     }
 
     return new Promise((resolve) => {
-      const finish = () => resolve();
-
-      slide.addEventListener("load", finish, { once: true });
-      slide.addEventListener("error", finish, { once: true });
+      slide.addEventListener("load", resolve, { once: true });
+      slide.addEventListener("error", resolve, { once: true });
     }).then(() => decodeSlide(slide));
   };
 
@@ -124,19 +169,16 @@ if (heroSlides.length > 1) {
   const prepareInitialSlides = () => {
     if (initialSlidesReady) return initialSlidesReady;
 
-    isPreparingSlide = true;
+    const nextIndex = (activeIndex + 1) % heroSlides.length;
+
     initialSlidesReady = Promise.all([
       loadSlide(heroSlides[activeIndex]),
       loadSlide(heroMaskSlides[activeIndex]),
-      loadSlide(heroSlides[(activeIndex + 1) % heroSlides.length]),
-      loadSlide(heroMaskSlides[(activeIndex + 1) % heroMaskSlides.length]),
-    ])
-      .then(() => {
-        preloadSlide((activeIndex + 2) % heroSlides.length);
-      })
-      .finally(() => {
-        isPreparingSlide = false;
-      });
+      loadSlide(heroSlides[nextIndex]),
+      loadSlide(heroMaskSlides[nextIndex]),
+    ]).then(() => {
+      preloadSlide((activeIndex + 2) % heroSlides.length);
+    });
 
     return initialSlidesReady;
   };
@@ -152,8 +194,8 @@ if (heroSlides.length > 1) {
     [currentSlide, currentMaskSlide].forEach((slide) => {
       if (!slide) return;
 
-      const currentStyle = window.getComputedStyle(slide);
-      slide.style.transform = currentStyle.transform;
+      // Freeze the slide at its current animated transform before exiting.
+      slide.style.transform = window.getComputedStyle(slide).transform;
       slide.style.animation = "none";
       slide.classList.remove("is-active");
       slide.classList.add("is-exiting");
@@ -163,9 +205,9 @@ if (heroSlides.length > 1) {
       if (!slide) return;
 
       slide.classList.remove("is-exiting");
-      slide.dataset.motion = motions[nextIndex % motions.length];
+      slide.dataset.motion = motionFor(nextIndex);
 
-      void slide.offsetWidth;
+      void slide.offsetWidth; // Force reflow so the animation restarts.
       slide.classList.add("is-active");
     });
 
@@ -182,10 +224,12 @@ if (heroSlides.length > 1) {
     activeIndex = nextIndex;
   };
 
+  const isPaused = () => reduceMotion.matches || document.hidden;
+
   const scheduleNextSlide = () => {
     window.clearTimeout(slideTimer);
 
-    if (reduceMotion.matches || document.hidden) {
+    if (isPaused()) {
       slideTimer = undefined;
       return;
     }
@@ -198,7 +242,7 @@ if (heroSlides.length > 1) {
         loadSlide(heroMaskSlides[nextIndex]),
       ]);
 
-      if (!reduceMotion.matches && !document.hidden) {
+      if (!isPaused()) {
         showSlide(nextIndex);
         preloadSlide((activeIndex + 1) % heroSlides.length);
       }
@@ -208,10 +252,10 @@ if (heroSlides.length > 1) {
   };
 
   const startHeroSlideshow = () => {
-    if (reduceMotion.matches || document.hidden || slideTimer) return;
+    if (isPaused() || slideTimer) return;
 
     prepareInitialSlides().then(() => {
-      if (!reduceMotion.matches && !document.hidden && !slideTimer) {
+      if (!isPaused() && !slideTimer) {
         scheduleNextSlide();
       }
     });
@@ -220,13 +264,12 @@ if (heroSlides.length > 1) {
   const queueHeroSlideshowStart = () => {
     window.clearTimeout(introTimer);
 
-    if (reduceMotion.matches || document.hidden) {
+    if (isPaused()) {
       introTimer = undefined;
       return;
     }
 
-    const now = window.performance ? window.performance.now() : Date.now();
-    const remainingIntroDelay = Math.max(0, heroIntroDelay - (now - heroIntroStartedAt));
+    const remainingIntroDelay = Math.max(0, heroIntroDelay - (now() - heroIntroStartedAt));
 
     introTimer = window.setTimeout(() => {
       introTimer = undefined;
@@ -240,7 +283,6 @@ if (heroSlides.length > 1) {
     window.clearTimeout(introTimer);
     slideTimer = undefined;
     introTimer = undefined;
-    isPreparingSlide = false;
   };
 
   prepareInitialSlides();
@@ -268,4 +310,4 @@ if (heroSlides.length > 1) {
   } else if (typeof reduceMotion.addListener === "function") {
     reduceMotion.addListener(handleMotionPreferenceChange);
   }
-}
+})();
