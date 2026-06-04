@@ -127,6 +127,15 @@
       }
     }
 
+    @keyframes hero-script-into-mask {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.12;
+      }
+    }
+
     @keyframes hero-scroll-reveal {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -178,7 +187,7 @@
       transform: translate3d(0, 0, 0) scale(1.08);
       transform-origin: center;
       backface-visibility: hidden;
-      filter: contrast(2.12) brightness(1.55) saturate(1.35);
+      filter: contrast(2.35) brightness(1.75) saturate(1.45);
       transition: opacity 1800ms cubic-bezier(0.45, 0, 0.15, 1);
     }
 
@@ -306,7 +315,7 @@
       --hero-script-offset: calc(var(--hero-logo-height) * 0.14685);
       position: absolute;
       inset: 0;
-      z-index: 15;
+      z-index: 24;
       pointer-events: none;
       opacity: 0;
       -webkit-mask-image: url("img/logo/scritta-corali.svg");
@@ -327,12 +336,16 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.28);
       mix-blend-mode: screen;
     }
 
     .is-hero-intro-complete .hero-wordmark-contrast {
       animation: hero-final-mask 900ms cubic-bezier(0.45, 0, 0.15, 1) forwards;
+    }
+
+    .is-hero-intro-complete .hero-logo-script-intro {
+      animation: hero-script-into-mask 650ms cubic-bezier(0.45, 0, 0.15, 1) 80ms forwards;
     }
 
     .hero-scroll-cue {
@@ -374,7 +387,7 @@
       }
 
       .hero-logo-script-intro {
-        opacity: 1;
+        opacity: 0.12;
         visibility: visible;
         clip-path: inset(0);
         transform: translate3d(0, 0, 0);
@@ -510,8 +523,7 @@
         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-sauced-meat.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift" decoding="async" loading="lazy" fetchpriority="low">
         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-colorful-fish.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" decoding="async" loading="lazy" fetchpriority="low">
       </div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.12),transparent_34%),linear-gradient(180deg,rgba(2,6,23,0.38),rgba(2,6,23,0.78))]"></div>
-      <div class="absolute inset-0 bg-slate-950/25"></div>
+      <div class="absolute inset-0 bg-slate-950/55"></div>
       <div class="hero-blue-curtain absolute inset-0" aria-hidden="true"></div>
       <div class="hero-logo-stage absolute inset-0 flex items-center justify-center px-6" aria-hidden="true">
         <div class="hero-logo-mark">
