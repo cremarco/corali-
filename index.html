@@ -3,10 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ristorante Coralì, cucina di mare contemporanea in un ambiente elegante e mediterraneo.">
-  <title>Ristorante Coralì | Cucina di mare contemporanea</title>
-  <link rel="icon" href="data:,">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3"></script>
+  <meta name="description" content="Ristorante Coralì a Varazze: cucina di mare contemporanea, menu stagionale, carta vini selezionata e prenotazioni in Corso Cristoforo Colombo 86.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ristorante Coralì">
+  <meta property="og:title" content="Ristorante Coralì a Varazze | Cucina di mare contemporanea">
+  <meta property="og:description" content="Cucina di mare contemporanea, sala raccolta e carta vini selezionata sul lungomare di Varazze.">
+  <meta property="og:url" content="https://www.coralivarazze.it/">
+  <meta property="og:image" content="https://www.coralivarazze.it/img/photo/room/locale.png">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Sala del Ristorante Coralì a Varazze">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ristorante Coralì a Varazze | Cucina di mare contemporanea">
+  <meta name="twitter:description" content="Cucina di mare contemporanea, sala raccolta e carta vini selezionata sul lungomare di Varazze.">
+  <meta name="twitter:image" content="https://www.coralivarazze.it/img/photo/room/locale.png">
+  <title>Ristorante Coralì Varazze | Cucina di mare contemporanea</title>
+  <link rel="canonical" href="https://www.coralivarazze.it/">
+  <link rel="icon" type="image/png" href="img/logo/pesce-piccolo.png">
+  <link rel="preload" as="image" href="img/photo/hero/hero-purple-crisp-saucer.png" fetchpriority="high">
+  <script src="vendor/tailwind-browser.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.cdnfonts.com/css/morsal" rel="stylesheet">
@@ -27,19 +45,113 @@
       to { transform: scale(1.15) translate3d(1.4%, -0.8%, 0); }
     }
 
+    @keyframes hero-slides-reveal {
+      from {
+        opacity: 0;
+        filter: saturate(0.85) contrast(0.94) brightness(0.7);
+      }
+      to {
+        opacity: 1;
+        filter: saturate(1.02) contrast(1.02) brightness(0.9);
+      }
+    }
+
+    @keyframes hero-blue-curtain {
+      0%, 72% { opacity: 1; }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes hero-logo-piece-out {
+      from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, -0.35rem, 0) scale(0.985);
+      }
+    }
+
+    @keyframes hero-luna-compose {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.98;
+      }
+    }
+
+    @keyframes hero-coral-compose {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 1.4rem, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes hero-fish-compose {
+      from {
+        opacity: 0;
+        transform: translate3d(2rem, 0, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes hero-script-compose {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes hero-final-mask {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 1rem, 0) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes hero-scroll-reveal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero-slides {
+      opacity: 0;
+      filter: saturate(0.85) contrast(0.94) brightness(0.7);
+      animation: hero-slides-reveal 1100ms cubic-bezier(0.45, 0, 0.15, 1) 2900ms forwards;
+    }
+
     .hero-slide {
       opacity: 0;
-      transform: scale(1.08);
-      transition: opacity 2400ms cubic-bezier(0.45, 0, 0.15, 1), filter 2400ms cubic-bezier(0.45, 0, 0.15, 1);
-      filter: saturate(0.9) contrast(0.96) brightness(0.82);
-      will-change: opacity, transform, filter;
+      transform: translate3d(0, 0, 0) scale(1.08);
+      transform-origin: center;
+      backface-visibility: hidden;
+      contain: paint;
+      transition: opacity 1800ms cubic-bezier(0.45, 0, 0.15, 1);
     }
 
     .hero-slide.is-active {
       z-index: 2;
       opacity: 1;
-      filter: saturate(1.08) contrast(1.04) brightness(0.96);
       animation: hero-zoom-in var(--hero-duration, 9000ms) linear forwards;
+      will-change: opacity, transform;
     }
 
     .hero-slide.is-active[data-motion="out"] {
@@ -53,22 +165,311 @@
     .hero-slide.is-exiting {
       z-index: 1;
       opacity: 1;
+      will-change: opacity, transform;
+    }
+
+    .hero-mask-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(1.08);
+      transform-origin: center;
+      backface-visibility: hidden;
+      filter: contrast(2.12) brightness(1.55) saturate(1.35);
+      transition: opacity 1800ms cubic-bezier(0.45, 0, 0.15, 1);
+    }
+
+    .hero-mask-slide.is-active {
+      opacity: 1;
+      animation: hero-zoom-in var(--hero-duration, 9000ms) linear forwards;
+      will-change: opacity, transform;
+    }
+
+    .hero-mask-slide.is-active[data-motion="out"] {
+      animation-name: hero-zoom-out;
+    }
+
+    .hero-mask-slide.is-active[data-motion="drift"] {
+      animation-name: hero-drift;
+    }
+
+    .hero-mask-slide.is-exiting {
+      opacity: 1;
+      will-change: opacity, transform;
+    }
+
+    .hero-blue-curtain {
+      z-index: 8;
+      background: #020617;
+      animation: hero-blue-curtain 3800ms cubic-bezier(0.45, 0, 0.15, 1) forwards;
+    }
+
+    .hero-logo-stage {
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .hero-logo-mark {
+      position: relative;
+      width: min(82vw, 560px);
+      aspect-ratio: 780 / 647;
+    }
+
+    .hero-logo-piece {
+      position: absolute;
+      display: block;
+      object-fit: contain;
+      opacity: 0;
+      transform-origin: center;
+      will-change: opacity, transform, clip-path;
+    }
+
+    .hero-logo-ink {
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-logo-luna {
+      left: 8.46%;
+      top: 4.17%;
+      width: 78.33%;
+      height: 95.83%;
+      animation:
+        hero-luna-compose 1100ms cubic-bezier(0.2, 0.75, 0.18, 1) 420ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-logo-corallo {
+      left: 31.03%;
+      top: 0;
+      width: 36.15%;
+      height: 62.44%;
+      animation:
+        hero-coral-compose 1050ms cubic-bezier(0.2, 0.75, 0.18, 1) 820ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-logo-fish-large {
+      left: 64.1%;
+      top: 27.05%;
+      width: 14.74%;
+      height: 9.43%;
+      animation:
+        hero-fish-compose 680ms cubic-bezier(0.2, 0.75, 0.18, 1) 1320ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-logo-fish-small {
+      left: 70%;
+      top: 39.72%;
+      width: 7.44%;
+      height: 5.26%;
+      animation:
+        hero-fish-compose 660ms cubic-bezier(0.2, 0.75, 0.18, 1) 1510ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-logo-fish-medium {
+      left: 65%;
+      top: 48.53%;
+      width: 10.13%;
+      height: 6.8%;
+      animation:
+        hero-fish-compose 660ms cubic-bezier(0.2, 0.75, 0.18, 1) 1700ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-logo-script-intro {
+      left: 0;
+      top: 46.68%;
+      width: 100%;
+      height: 36.01%;
+      filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(255, 255, 255, 0.2));
+      animation: hero-script-compose 950ms cubic-bezier(0.45, 0, 0.15, 1) 2100ms forwards;
+    }
+
+    .hero-logo-slogan {
+      left: 27.05%;
+      top: 81.45%;
+      width: 45.13%;
+      height: 6.96%;
+      animation:
+        hero-script-compose 700ms cubic-bezier(0.45, 0, 0.15, 1) 2580ms forwards,
+        hero-logo-piece-out 700ms cubic-bezier(0.45, 0, 0.15, 1) 3150ms forwards;
+    }
+
+    .hero-wordmark-contrast {
+      --hero-logo-width: min(82vw, 560px);
+      --hero-logo-height: calc(var(--hero-logo-width) * 647 / 780);
+      --hero-script-offset: calc(var(--hero-logo-height) * 0.14685);
+      position: absolute;
+      inset: 0;
+      z-index: 15;
+      pointer-events: none;
+      opacity: 0;
+      -webkit-mask-image: url("img/logo/scritta-corali.svg");
+      mask-image: url("img/logo/scritta-corali.svg");
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: var(--hero-logo-width) auto;
+      mask-size: var(--hero-logo-width) auto;
+      -webkit-mask-position: center calc(50% + var(--hero-script-offset));
+      mask-position: center calc(50% + var(--hero-script-offset));
+      filter: drop-shadow(0 0 32px rgba(255, 255, 255, 0.28));
+      mix-blend-mode: screen;
+    }
+
+    .hero-wordmark-contrast::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.2);
+      mix-blend-mode: screen;
+    }
+
+    .is-hero-intro-complete .hero-wordmark-contrast {
+      animation: hero-final-mask 900ms cubic-bezier(0.45, 0, 0.15, 1) forwards;
+    }
+
+    .hero-scroll-cue {
+      opacity: 0;
+      animation: hero-scroll-reveal 700ms ease 3450ms forwards;
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .hero-slides {
+        opacity: 1;
+        filter: saturate(1.02) contrast(1.02) brightness(0.9);
+        animation: none;
+      }
+
       .hero-slide,
-      .hero-slide.is-active {
+      .hero-slide.is-active,
+      .hero-mask-slide,
+      .hero-mask-slide.is-active {
         animation: none;
         transition-duration: 400ms;
-        transform: scale(1.04);
+        transform: translate3d(0, 0, 0) scale(1.04);
+      }
+
+      .hero-blue-curtain {
+        display: none;
+        animation: none;
+      }
+
+      .hero-wordmark-contrast,
+      .hero-scroll-cue {
+        opacity: 1;
+        animation: none;
+      }
+
+      .hero-logo-stage,
+      .hero-logo-script-intro {
+        opacity: 1;
+        animation: none;
+      }
+
+      .hero-logo-script-intro {
+        opacity: 1;
+        visibility: visible;
+        clip-path: inset(0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      .hero-logo-luna,
+      .hero-logo-corallo,
+      .hero-logo-fish-large,
+      .hero-logo-fish-small,
+      .hero-logo-fish-medium,
+      .hero-logo-slogan {
+        display: none;
       }
     }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "@id": "https://www.coralivarazze.it/#restaurant",
+          "name": "Ristorante Coralì",
+          "legalName": "Ristorante Coralì di Giulia D'Alì",
+          "url": "https://www.coralivarazze.it/",
+          "telephone": "+390197703829",
+          "servesCuisine": ["Cucina di mare", "Cucina contemporanea", "Cucina ligure"],
+          "priceRange": "€€",
+          "image": [
+            "https://www.coralivarazze.it/img/photo/room/locale.png",
+            "https://www.coralivarazze.it/img/photo/hero/hero-purple-crisp-saucer.png",
+            "https://www.coralivarazze.it/img/photo/plates/25.png"
+          ],
+          "logo": "https://www.coralivarazze.it/img/logo/logo-completo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Corso Cristoforo Colombo, 86",
+            "addressLocality": "Varazze",
+            "addressRegion": "SV",
+            "postalCode": "17019",
+            "addressCountry": "IT"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Sunday"],
+              "opens": "19:30",
+              "closes": "22:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "19:30",
+              "closes": "22:30"
+            }
+          ],
+          "hasMenu": [
+            "https://www.coralivarazze.it/menu.html",
+            "https://www.coralivarazze.it/carta-vini.html"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.coralivarazze.it/#website",
+          "name": "Ristorante Coralì",
+          "url": "https://www.coralivarazze.it/",
+          "inLanguage": "it-IT",
+          "publisher": {
+            "@id": "https://www.coralivarazze.it/#restaurant"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.coralivarazze.it/#webpage",
+          "url": "https://www.coralivarazze.it/",
+          "name": "Ristorante Coralì Varazze | Cucina di mare contemporanea",
+          "description": "Ristorante Coralì a Varazze: cucina di mare contemporanea, menu stagionale, carta vini selezionata e prenotazioni in Corso Cristoforo Colombo 86.",
+          "isPartOf": {
+            "@id": "https://www.coralivarazze.it/#website"
+          },
+          "about": {
+            "@id": "https://www.coralivarazze.it/#restaurant"
+          },
+          "inLanguage": "it-IT"
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="overflow-x-hidden bg-stone-100 font-['Montserrat'] text-slate-900 antialiased selection:bg-orange-300 selection:text-slate-950">
-  <header class="fixed inset-x-0 top-0 z-50 bg-slate-950/25 text-white backdrop-blur-xl">
+  <header class="hero-site-header fixed inset-x-0 top-0 z-50 bg-slate-950/45 text-white">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-      <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-3xl font-normal leading-none tracking-wide text-white sm:text-[2.35rem]">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
+      <a href="index.html" aria-label="Coralì" class="inline-flex items-center">
+        <img src="img/logo/scritta-corali.svg" alt="Coralì" class="block h-9 w-auto brightness-0 invert sm:h-10">
+      </a>
       <nav class="hidden items-center gap-8 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/75 md:flex">
         <a class="transition hover:text-orange-200" href="#esperienza">Esperienza</a>
         <a class="transition hover:text-orange-200" href="menu.html">Menu</a>
@@ -93,28 +494,53 @@
   </header>
 
   <main>
-    <section class="relative flex h-screen w-full items-center justify-center overflow-hidden bg-slate-950" data-hero-slideshow>
-      <div class="absolute inset-0" aria-hidden="true">
-        <img src="img/photo/hero/hero-purple-crisp-saucer.png" alt="" class="hero-slide is-active absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in">
-        <img src="img/photo/hero/hero-dark-plate-appetizer.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out">
-        <img src="img/photo/hero/hero-seafood-crudo-dots.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift">
-        <img src="img/photo/hero/hero-citrus-fritters.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in">
-        <img src="img/photo/hero/hero-seafood-platter.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out">
-        <img src="img/photo/hero/hero-clam-pasta.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift">
-        <img src="img/photo/hero/hero-seafood-risotto.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in">
-        <img src="img/photo/hero/hero-slate-crudo.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out">
-        <img src="img/photo/hero/hero-seafood-skewers.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift">
-        <img src="img/photo/hero/hero-colorful-seafood-stack.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in">
-        <img src="img/photo/hero/hero-paccheri-pasta.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out">
-        <img src="img/photo/hero/hero-sauced-meat.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift">
-        <img src="img/photo/hero/hero-colorful-fish.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in">
+    <section class="relative flex h-screen w-full items-center justify-center overflow-hidden bg-slate-950" data-hero-slideshow data-hero-intro-delay="3800">
+      <div class="hero-slides absolute inset-0" aria-hidden="true">
+        <img src="img/photo/hero/hero-purple-crisp-saucer.png" alt="" class="hero-slide is-active absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" data-hero-loaded="true" decoding="async" fetchpriority="high">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-dark-plate-appetizer.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-crudo-dots.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-citrus-fritters.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-platter.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-clam-pasta.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-risotto.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-slate-crudo.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-skewers.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-colorful-seafood-stack.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-paccheri-pasta.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="out" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-sauced-meat.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="drift" decoding="async" loading="lazy" fetchpriority="low">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-colorful-fish.png" alt="" class="hero-slide absolute inset-0 h-full w-full object-cover" data-hero-slide data-motion="in" decoding="async" loading="lazy" fetchpriority="low">
       </div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.12),transparent_34%),linear-gradient(180deg,rgba(2,6,23,0.38),rgba(2,6,23,0.78))]"></div>
       <div class="absolute inset-0 bg-slate-950/25"></div>
-      <div class="relative z-10 px-6 text-center mix-blend-overlay">
-        <h1 aria-label="Coralì" class="font-['Morsal'] text-[118px] font-normal leading-none tracking-wide text-white opacity-95 drop-shadow-[0_0_34px_rgba(255,255,255,0.34)] md:text-[198px]">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></h1>
+      <div class="hero-blue-curtain absolute inset-0" aria-hidden="true"></div>
+      <div class="hero-logo-stage absolute inset-0 flex items-center justify-center px-6" aria-hidden="true">
+        <div class="hero-logo-mark">
+          <img src="img/logo/luna.svg" alt="" class="hero-logo-piece hero-logo-luna">
+          <img src="img/logo/corallo.svg" alt="" class="hero-logo-piece hero-logo-corallo">
+          <img src="img/logo/pesce-grande.svg" alt="" class="hero-logo-piece hero-logo-ink hero-logo-fish-large">
+          <img src="img/logo/pesce-piccolo.svg" alt="" class="hero-logo-piece hero-logo-ink hero-logo-fish-small">
+          <img src="img/logo/pesce-medio.svg" alt="" class="hero-logo-piece hero-logo-ink hero-logo-fish-medium">
+          <img src="img/logo/scritta-corali.svg" alt="" class="hero-logo-piece hero-logo-ink hero-logo-script-intro">
+          <img src="img/logo/slogan-arte-in-cucina.svg" alt="" class="hero-logo-piece hero-logo-ink hero-logo-slogan">
+        </div>
       </div>
-      <div class="absolute bottom-12 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4 text-white motion-safe:animate-pulse">
+      <h1 class="sr-only">Coralì</h1>
+      <div class="hero-wordmark-contrast" aria-hidden="true">
+        <img src="img/photo/hero/hero-purple-crisp-saucer.png" alt="" class="hero-mask-slide is-active" data-hero-mask-slide data-motion="in" data-hero-loaded="true" decoding="async">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-dark-plate-appetizer.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="out" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-crudo-dots.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="drift" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-citrus-fritters.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="in" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-platter.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="out" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-clam-pasta.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="drift" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-risotto.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="in" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-slate-crudo.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="out" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-seafood-skewers.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="drift" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-colorful-seafood-stack.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="in" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-paccheri-pasta.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="out" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-sauced-meat.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="drift" decoding="async" loading="lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-hero-src="img/photo/hero/hero-colorful-fish.png" alt="" class="hero-mask-slide" data-hero-mask-slide data-motion="in" decoding="async" loading="lazy">
+      </div>
+      <div class="hero-scroll-cue absolute bottom-12 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4 text-white motion-safe:animate-pulse">
         <span class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white/70">Scorri</span>
         <span class="h-12 w-px bg-white/30"></span>
       </div>
@@ -141,7 +567,7 @@
         </div>
         <div class="relative opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
           <div class="relative aspect-[4/5] overflow-hidden bg-stone-200">
-            <img src="img/home-azzurro/section01.png" alt="Piatto di mare in sala elegante con lampada e calice" class="h-full w-full object-cover object-center transition duration-700 hover:scale-105">
+            <img src="img/photo/plates/1.png" alt="Piatto di mare in sala elegante con lampada e calice" class="h-full w-full object-cover object-center transition duration-700 hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/25 to-transparent"></div>
           </div>
           <img src="img/decor/tre-alghe-sottili-bianche.png" alt="" class="pointer-events-none absolute -bottom-12 left-0 w-32 opacity-45" aria-hidden="true">
@@ -161,7 +587,7 @@
         </div>
         <div class="grid auto-rows-[220px] grid-cols-1 gap-5 md:grid-cols-12 md:auto-rows-[260px]">
           <article class="group relative overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 md:col-span-8 md:row-span-2" data-reveal>
-            <img src="img/home-azzurro/composizione-25.jpg" alt="Composizione di mare su lastra scura" class="h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-105">
+            <img src="img/photo/plates/25.png" alt="Composizione di mare su lastra scura" class="h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/15 to-transparent"></div>
             <div class="absolute bottom-0 left-0 max-w-lg p-7 text-white sm:p-9">
               <p class="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.26em] text-orange-200">Signature</p>
@@ -170,7 +596,7 @@
             </div>
           </article>
           <article class="group relative overflow-hidden bg-white opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 md:col-span-4" data-reveal>
-            <img src="img/home-azzurro/risotto-31.jpg" alt="Risotto di mare in piatto ceramico" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <img src="img/photo/plates/31.png" alt="Risotto di mare in piatto ceramico" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
           </article>
           <article class="relative overflow-hidden bg-stone-100 p-8 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 md:col-span-4" data-reveal>
             <img src="img/decor/corallo-azzurro-rami-arrotondati.png" alt="" class="absolute -bottom-14 right-0 w-52 opacity-10" aria-hidden="true">
@@ -185,7 +611,7 @@
 
     <section id="location" class="grid bg-stone-100 lg:min-h-screen lg:grid-cols-2">
       <div class="relative min-h-[420px] overflow-hidden bg-slate-900 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
-        <img src="img/home-azzurro/locale.png" alt="Sala del Ristorante Coralì con volta in mattoni e tavoli azzurri" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+        <img src="img/photo/room/locale.png" alt="Sala del Ristorante Coralì con volta in mattoni e tavoli azzurri" class="h-full w-full object-cover transition duration-700 hover:scale-105">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/35 to-transparent"></div>
       </div>
       <div id="prenota" class="flex items-center px-5 py-20 sm:px-8 lg:px-16">
@@ -196,9 +622,11 @@
             <div>
               <p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-slate-950">Orari</p>
               <div class="space-y-3 text-sm">
-                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Martedì - Sabato</span><span>19:00 - 23:00</span></p>
-                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Domenica</span><span>12:30 - 15:30</span></p>
-                <p class="flex justify-between text-slate-500"><span>Lunedì</span><span>Chiuso</span></p>
+                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Lunedì, Martedì</span><span>19:30 - 22:00</span></p>
+                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Giovedì, Venerdì</span><span>19:30 - 22:00</span></p>
+                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Sabato</span><span>19:30 - 22:30</span></p>
+                <p class="flex justify-between border-b border-slate-900/10 pb-3"><span>Domenica</span><span>19:30 - 22:00</span></p>
+                <p class="flex justify-between text-slate-500"><span>Mercoledì</span><span>Chiuso</span></p>
               </div>
             </div>
             <div>
@@ -219,19 +647,22 @@
   <footer class="border-t border-slate-900/10 bg-stone-100 px-5 py-14 sm:px-8 lg:px-10">
     <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 text-sm text-slate-600 md:flex-row md:items-center">
       <div>
-        <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-4xl font-normal leading-none tracking-wide text-slate-950">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
-        <p class="mt-3">Cucina di mare contemporanea. Varazze.</p>
+        <a href="index.html" aria-label="Coralì" class="inline-flex items-center">
+          <img src="img/logo/scritta-corali.svg" alt="Coralì" class="block h-11 w-auto sm:h-12">
+        </a>
+        <p class="mt-3">Cucina di mare contemporanea. Corso Cristoforo Colombo, 86, Varazze.</p>
       </div>
       <nav class="flex flex-wrap gap-5">
+        <a class="transition hover:text-orange-700" href="index.html">Home</a>
         <a class="transition hover:text-orange-700" href="menu.html">Menu</a>
         <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="#location">Location</a>
         <a class="transition hover:text-orange-700" href="tel:+390197703829">019 770 3829</a>
-        <a class="transition hover:text-orange-700" href="#">Privacy</a>
+        <a class="transition hover:text-orange-700" href="mailto:giulia209@hotmail.it?subject=Privacy%20Coral%C3%AC">Privacy</a>
       </nav>
     </div>
   </footer>
 
-  <script src="site.js?v=hero-smooth-1"></script>
+  <script src="site.js?v=hero-smooth-2"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /tmp-image-review/
+Disallow: /Coral%C3%AC/
+Disallow: /Coralì/
+
+Sitemap: https://www.coralivarazze.it/sitemap.xml

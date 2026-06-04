@@ -3,26 +3,408 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Menu del Ristorante Coralì: antipasti, primi e secondi dalla carta ufficiale.">
-  <title>Ristorante Coralì | Menu</title>
-  <link rel="icon" href="data:,">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3"></script>
+  <meta name="description" content="Menu del Ristorante Coralì a Varazze: crudi, antipasti, primi e secondi di mare con descrizioni, prezzi e prenotazione telefonica.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ristorante Coralì">
+  <meta property="og:title" content="Menu Ristorante Coralì Varazze | Cucina di mare">
+  <meta property="og:description" content="Crudi, antipasti, primi e secondi dalla carta del Ristorante Coralì, cucina di mare contemporanea a Varazze.">
+  <meta property="og:url" content="https://www.coralivarazze.it/menu.html">
+  <meta property="og:image" content="https://www.coralivarazze.it/img/photo/plates/40.png">
+  <meta property="og:image:width" content="1448">
+  <meta property="og:image:height" content="1086">
+  <meta property="og:image:alt" content="Piatto di mare del Ristorante Coralì">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menu Ristorante Coralì Varazze | Cucina di mare">
+  <meta name="twitter:description" content="Crudi, antipasti, primi e secondi dalla carta del Ristorante Coralì, cucina di mare contemporanea a Varazze.">
+  <meta name="twitter:image" content="https://www.coralivarazze.it/img/photo/plates/40.png">
+  <title>Menu Ristorante Coralì Varazze | Cucina di mare</title>
+  <link rel="canonical" href="https://www.coralivarazze.it/menu.html">
+  <link rel="icon" type="image/png" href="img/logo/pesce-piccolo.png">
+  <script src="vendor/tailwind-browser.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.cdnfonts.com/css/morsal" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "@id": "https://www.coralivarazze.it/#restaurant",
+          "name": "Ristorante Coralì",
+          "legalName": "Ristorante Coralì di Giulia D'Alì",
+          "url": "https://www.coralivarazze.it/",
+          "telephone": "+390197703829",
+          "servesCuisine": ["Cucina di mare", "Cucina contemporanea", "Cucina ligure"],
+          "priceRange": "€€",
+          "image": [
+            "https://www.coralivarazze.it/img/photo/room/locale.png",
+            "https://www.coralivarazze.it/img/photo/plates/40.png"
+          ],
+          "logo": "https://www.coralivarazze.it/img/logo/logo-completo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Corso Cristoforo Colombo, 86",
+            "addressLocality": "Varazze",
+            "addressRegion": "SV",
+            "postalCode": "17019",
+            "addressCountry": "IT"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Sunday"],
+              "opens": "19:30",
+              "closes": "22:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "19:30",
+              "closes": "22:30"
+            }
+          ],
+          "hasMenu": {
+            "@id": "https://www.coralivarazze.it/menu.html#menu"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.coralivarazze.it/menu.html#webpage",
+          "url": "https://www.coralivarazze.it/menu.html",
+          "name": "Menu Ristorante Coralì Varazze | Cucina di mare",
+          "description": "Menu del Ristorante Coralì a Varazze: crudi, antipasti, primi e secondi di mare con descrizioni, prezzi e prenotazione telefonica.",
+          "isPartOf": {
+            "@id": "https://www.coralivarazze.it/#website"
+          },
+          "about": {
+            "@id": "https://www.coralivarazze.it/#restaurant"
+          },
+          "inLanguage": "it-IT"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.coralivarazze.it/menu.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.coralivarazze.it/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Menu",
+              "item": "https://www.coralivarazze.it/menu.html"
+            }
+          ]
+        },
+        {
+          "@type": "Menu",
+          "@id": "https://www.coralivarazze.it/menu.html#menu",
+          "name": "Menu cucina Ristorante Coralì",
+          "url": "https://www.coralivarazze.it/menu.html",
+          "inLanguage": "it-IT",
+          "hasMenuSection": [
+              {
+                "@type": "MenuSection",
+                "name": "Antipasti",
+                "url": "https://www.coralivarazze.it/menu.html#antipasti",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Salumi di mare lavorati e stagionati da noi",
+                    "description": "Accompagnati da confetture di frutta e verdura homemade, crostini di pane ai 7 cereali, giardiniera ai profumi d'Oriente.",
+                    "offers": [
+                      {
+                        "@type": "Offer",
+                        "name": "L'assaggio per una persona",
+                        "price": "22.00",
+                        "priceCurrency": "EUR"
+                      },
+                      {
+                        "@type": "Offer",
+                        "name": "Il tagliere consigliato per due persone",
+                        "price": "40.00",
+                        "priceCurrency": "EUR"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Polpo alla galiziana",
+                    "description": "Patate viola al vapore, paprika affumicata, fili di peperoncino dolce, crema di datterino giallo alla brace, olio al basilico.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "19.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Il cappon magro del Coralì",
+                    "description": "Spigola, polpo e barbabietola avvolti in zucchina marinata su spuma di patate affumicata, crudo di gambero rosso, verdure croccanti e salsa verde.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "20.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Sfera di salmone marinato",
+                    "description": "Ripiena di burrata affumicata, zest di lime ed erba cipollina, maionese al wasabi, uova di salmone selvaggio, insalatina di finocchi, pomelo e salsa di soia.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "19.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Uovo cotto a bassa temperatura",
+                    "description": "Crema di asparagi e le loro punte, camembert di bufala, tartufo nero, pepe di Timut, fava tonka.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "18.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Fave alla brace",
+                    "description": "Sfere croccanti di Pecorino, pane nero, cacciatorino di cinghiale stagionato.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "18.00",
+                      "priceCurrency": "EUR"
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "I nostri crudi",
+                "url": "https://www.coralivarazze.it/menu.html#crudi",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Mazzancolle",
+                    "description": "Prezzo cadauno.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "5.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Gamberi Viola",
+                    "description": "Prezzo cadauno.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "5.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Gamberi Rossi",
+                    "description": "Prezzo cadauno.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "8.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Scampi",
+                    "description": "Prezzo cadauno.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "5.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Ostriche Gillardeau",
+                    "description": "Prezzo cadauna.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "7.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Mangia e bevi di ostrica Gillardeau",
+                    "description": "Con caviale di gin, gel al lampone, olio all'erba cipollina, maio al wasabi e zest di lime.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "8.50",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Il piatto di crudo",
+                    "description": "Gambero rosso, gambero viola, scampo, mazzancolla, tartare di tonno con marmellata di cipolla rossa di Tropea e salsa di soia, carpaccio di salmone marinato con arancia, cannella e semi di papavero, carpaccio di ricciola con gel ai lamponi.",
+                    "offers": [
+                      {
+                        "@type": "Offer",
+                        "price": "34.00",
+                        "priceCurrency": "EUR"
+                      },
+                      {
+                        "@type": "Offer",
+                        "name": "Con l'aggiunta di due Ostriche Gillardeau",
+                        "price": "42.00",
+                        "priceCurrency": "EUR"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Primi",
+                "url": "https://www.coralivarazze.it/menu.html#primi",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Paccheri al guanciale di tonno",
+                    "description": "Crema di uovo cotta a bassa temperatura, pepe nero tostato, porri croccanti e julienne di Pecorino Romano DOP.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "18.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Tortelli di farina di castagne",
+                    "description": "Ripieni di baccalà mantecato e patata viola su crema di fave novelle, con gocce di 'nduja, fonduta di cacio e pepe, polvere di olive nere.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "20.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Tagliatelle rustiche alle ortiche",
+                    "description": "Ragù bianco di coniglio, piselli, pinoli e olive taggiasche, crema di datterino giallo, aglio nero.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "20.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Riso Carnaroli mantecato al caprino",
+                    "description": "Crema di fragole, capesante cotte e crude, limone candito, caviale al balsamico, polvere di liquirizia.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "22.00",
+                      "priceCurrency": "EUR"
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Secondi",
+                "url": "https://www.coralivarazze.it/menu.html#secondi",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Rivisitazione di una sogliola alla mugnaia",
+                    "description": "Filetto di sogliola scottato, beurre blanc alla nocciola, limone fermentato, olio e aria al prezzemolo, insalatina di asparagi.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "26.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Trancio di baccalà cotto a bassa temperatura",
+                    "description": "Aromatizzato a timo, arancia e caffè, zucchine trombetta marinate e la loro crema, aglio nero, gel all'arancia.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "22.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Arrostino di pescatrice brasato",
+                    "description": "Avvolto in guanciale di Patanegra, piselli freschi saltati con scalogno e aceto di lamponi, chips di patata viola.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "25.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Costolette di agnello alla brace",
+                    "description": "Laccate alla senape e miele, fondo bruno, cuore di carciofo alla romana, crema di patate montata all'olio extravergine e fava tonka.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "24.00",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pescato del giorno nella tradizionale cottura al sale",
+                    "description": "Servito con verdure di stagione saltate e maionese aromatizzata al limone, salsa di soia ed erba cipollina. Per due persone.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "5.50",
+                      "priceCurrency": "EUR"
+                    }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Chateaubriand di tonno alla piastra",
+                    "description": "Accompagnato da patate rustiche aromatiche e salsa bernese, servito su pietra lavica calda. Per due persone.",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "50.00",
+                      "priceCurrency": "EUR"
+                    }
+                  }
+                ]
+              }
+            ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="overflow-x-hidden bg-stone-100 font-['Montserrat'] text-slate-900 antialiased selection:bg-orange-300 selection:text-slate-950">
   <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-900/10 bg-stone-100/85 text-slate-950 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-      <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-3xl font-normal leading-none tracking-wide sm:text-[2.35rem]">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
+      <a href="index.html" aria-label="Coralì" class="inline-flex items-center">
+        <img src="img/logo/scritta-corali.svg" alt="Coralì" class="block h-9 w-auto sm:h-10">
+      </a>
       <nav class="hidden items-center gap-8 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-700 md:flex">
         <a class="transition hover:text-orange-700" href="index.html#esperienza">Esperienza</a>
         <a class="border-b border-slate-950 pb-1 text-slate-950" href="menu.html">Menu</a>
         <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="index.html#location">Location</a>
       </nav>
-      <a href="tel:+390197703829" class="hidden border border-slate-950 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-slate-950 hover:text-white md:inline-flex">Prenota</a>
+      <a href="index.html#prenota" class="hidden border border-slate-950 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-slate-950 hover:text-white md:inline-flex">Prenota</a>
       <button type="button" class="inline-flex size-11 items-center justify-center border border-slate-950/30 text-slate-950 transition hover:bg-slate-950 hover:text-white md:hidden" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Apri menu</span>
         <span class="h-px w-5 bg-current before:block before:h-px before:w-5 before:-translate-y-2 before:bg-current before:content-[''] after:block after:h-px after:w-5 after:translate-y-[7px] after:bg-current after:content-['']"></span>
@@ -34,27 +416,29 @@
         <a class="text-slate-950" href="menu.html">Menu</a>
         <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
         <a class="transition hover:text-orange-700" href="index.html#location">Location</a>
-        <a class="border border-slate-950 px-4 py-3 text-center text-slate-950" href="tel:+390197703829">Prenota</a>
+        <a class="border border-slate-950 px-4 py-3 text-center text-slate-950" href="index.html#prenota">Prenota</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="relative overflow-hidden px-5 pb-20 pt-36 sm:px-8 lg:px-10 lg:pb-24 lg:pt-40">
+    <section class="relative overflow-hidden px-5 pb-20 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-44">
       <img src="img/decor/corallo-azzurro-rami-sottili.png" alt="" class="pointer-events-none absolute right-0 top-24 w-72 opacity-10 sm:w-96" aria-hidden="true">
       <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
         <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-6" data-reveal>
           <p class="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.3em] text-orange-700">Carta ufficiale</p>
           <h1 class="font-['Playfair_Display'] text-5xl font-semibold leading-tight text-slate-950 sm:text-7xl">Menu</h1>
-          <p class="mt-7 max-w-2xl text-base leading-8 tracking-wide text-slate-600">Antipasti, primi e secondi tratti dal Menu Coralì Esterno.</p>
+          <p class="mt-7 max-w-2xl text-base leading-8 tracking-wide text-slate-600">Crudi, antipasti, primi e secondi tratti dalla carta Coralì.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#carta" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-transparent hover:text-slate-950">Leggi la carta</a>
-            <a href="carta-vini.html" class="inline-flex items-center justify-center border border-slate-950/25 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:border-slate-950">Carta vini</a>
+            <a href="#carta" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:bg-transparent hover:text-slate-950">Leggi la carta</a>
+            <a href="carta-vini.html" class="inline-flex items-center justify-center border border-slate-950/25 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:border-slate-950">Carta vini</a>
           </div>
         </div>
-        <div class="relative overflow-hidden bg-slate-950 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5 lg:col-start-8" data-reveal>
-          <img src="img/photo/plates/hero.png" alt="Piatto di mare del Ristorante Coralì" class="aspect-[4/5] h-full w-full object-cover opacity-90 transition duration-700 hover:scale-105">
-          <div class="absolute inset-4 border border-white/25"></div>
+        <div class="relative opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5 lg:col-start-8" data-reveal>
+          <div class="relative aspect-[4/5] overflow-hidden bg-slate-950">
+            <img src="img/photo/plates/40.png" alt="Piatto di mare del Ristorante Coralì" class="h-full w-full object-cover opacity-90 transition duration-700 hover:scale-105">
+            <div class="absolute inset-4 border border-white/25"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -67,6 +451,7 @@
               <p class="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Sezioni</p>
               <nav class="mt-6 flex flex-col gap-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">
                 <a class="transition hover:text-slate-950" href="#antipasti">Antipasti</a>
+                <a class="transition hover:text-slate-950" href="#crudi">I nostri crudi</a>
                 <a class="transition hover:text-slate-950" href="#primi">Primi</a>
                 <a class="transition hover:text-slate-950" href="#secondi">Secondi</a>
               </nav>
@@ -74,7 +459,7 @@
           </aside>
 
           <div class="space-y-16 lg:col-span-8 lg:col-start-5">
-            <section id="antipasti" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+            <section id="antipasti" class="scroll-mt-32 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
               <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
                 <div>
                   <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">In apertura</p>
@@ -85,50 +470,108 @@
               <div class="space-y-7">
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Tagliere di salumi di mare</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Salumi di mare lavorati e stagionati da noi</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">22,00 € / 40,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Nostra produzione, confetture di frutta e verdura homemade, crostini di pane ai 7 cereali, rivisitazione di giardiniera.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Accompagnati da confetture di frutta e verdura homemade, crostini di pane ai 7 cereali, giardiniera ai profumi d'Oriente.</p>
+                  <p class="mt-2 text-sm font-medium text-slate-500">Il tagliere, consigliato per due persone, 40,00 €. L'assaggio, per una persona, 22,00 €.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Sfera di gambero viola del golfo</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">16,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Polpo alla galiziana</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">19,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Ripiena di burrata affumicata e lime, sfoglie di bottarga di Cabras, carciofo in oliocottura, polvere di pomodori camoni.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Patate viola al vapore, paprika affumicata, fili di peperoncino dolce, crema di datterino giallo alla brace, olio al basilico.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">La tartare di tonno dentro al calamaro</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Il cappon magro del Coralì</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">20,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Calamaro del mediterraneo scottato al vapore ripieno di tartare di tonno, olive taggiasche e pinoli tostati, aria all'aneto e riduzione di datterino giallo.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Spigola, polpo e barbabietola avvolti in zucchina marinata su spuma di patate affumicata, crudo di gambero rosso, verdure croccanti e salsa verde.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Quenelle di baccalà mantecato</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">12,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Sfera di salmone marinato</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">19,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Nuvola di pane, confettura di cipolla rossa, polvere di olive nere e caviale al basilico.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Ripiena di burrata affumicata, zest di lime ed erba cipollina, maionese al wasabi, uova di salmone selvaggio, insalatina di finocchi, pomelo e salsa di soia.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
                     <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Uovo cotto a bassa temperatura</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">10,00 €</span>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Su fondutina al raschera tartufato, puntarelle croccanti, cialda di pasta fillo e semi di papavero.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Crema di asparagi e le loro punte, camembert di bufala, tartufo nero, pepe di Timut, fava tonka.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Girello di vitello al “rosa”</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">13,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Fave alla brace</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Salsa tonnata all'antica, fiori di cappero, cialda di riso soffiato alla barbabietola, germogli, aria di cipolla di Tropea.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Sfere croccanti di Pecorino, pane nero, cacciatorino di cinghiale stagionato.</p>
                 </article>
               </div>
             </section>
 
-            <section id="primi" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+            <section id="crudi" class="scroll-mt-32 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+              <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
+                <div>
+                  <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Dal banco crudo</p>
+                  <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">I nostri crudi</h2>
+                </div>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">7 proposte</span>
+              </div>
+              <div class="space-y-7">
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Mazzancolle</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">cad. 5,00 €</span>
+                  </div>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Gamberi Viola</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">cad. 5,00 €</span>
+                  </div>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Gamberi Rossi</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">cad. 8,00 €</span>
+                  </div>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Scampi</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">cad. 5,00 €</span>
+                  </div>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Ostriche Gillardeau</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">cad. 7,00 €</span>
+                  </div>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Mangia e bevi di ostrica Gillardeau</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">8,50 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Con caviale di gin, gel al lampone, olio all'erba cipollina, maio al wasabi e zest di lime.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Il piatto di crudo</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">34,00 € / 42,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Gambero rosso, gambero viola, scampo, mazzancolla, tartare di tonno con marmellata di cipolla rossa di Tropea e salsa di soia, carpaccio di salmone marinato con arancia, cannella e semi di papavero, carpaccio di ricciola con gel ai lamponi.</p>
+                  <p class="mt-2 text-sm font-medium text-slate-500">Con l'aggiunta di due Ostriche Gillardeau, 42,00 €.</p>
+                </article>
+              </div>
+            </section>
+
+            <section id="primi" class="scroll-mt-32 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
               <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
                 <div>
                   <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Paste e riso</p>
@@ -139,71 +582,87 @@
               <div class="space-y-7">
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Paccheri al guanciale di tonno affumicato</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">14,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Paccheri al guanciale di tonno</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Crema di uovo cotto a bassa temperatura, pepe nero tostato, porri croccanti e julienne di pecorino romano DOP.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Crema di uovo cotta a bassa temperatura, pepe nero tostato, porri croccanti e julienne di Pecorino Romano DOP.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Spaghetti con fondente di pane aromatico</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">16,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Tortelli di farina di castagne</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">20,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Erbe e aglio nero, scorza di lime, lime candito, vongole veraci e cristalli di prezzemolo.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Ripieni di baccalà mantecato e patata viola su crema di fave novelle, con gocce di 'nduja, fonduta di cacio e pepe, polvere di olive nere.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Risotto al mandarino</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Tagliatelle rustiche alle ortiche</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">20,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Salicornia e salmone confit, nocciole tostate e finocchietto in due consistenze.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Ragù bianco di coniglio, piselli, pinoli e olive taggiasche, crema di datterino giallo, aglio nero.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Ravioli di borragine</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">13,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Riso Carnaroli mantecato al caprino</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">22,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Nostra produzione, salsa di noci, julienne di crudo di Parma croccante, scaglie di reggiano DOP e crumble di noci.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Crema di fragole, capesante cotte e crude, limone candito, caviale al balsamico, polvere di liquirizia.</p>
                 </article>
               </div>
             </section>
 
-            <section id="secondi" class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
+            <section id="secondi" class="scroll-mt-32 opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100" data-reveal>
               <div class="mb-8 flex items-end justify-between gap-6 border-b border-slate-900/10 pb-5">
                 <div>
                   <p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-orange-700">Dalla cucina</p>
                   <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950 sm:text-5xl">Secondi</h2>
                 </div>
-                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">4 piatti</span>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:inline">6 piatti</span>
               </div>
               <div class="space-y-7">
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Arrosticini di pesce spada</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">17,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Rivisitazione di una sogliola alla mugnaia</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">26,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Affumicati al rosmarino e legno di mandorlo, petali di cipolla rossa marinata, caponatina di melanzane e salsa teriyaki.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Filetto di sogliola scottato, beurre blanc alla nocciola, limone fermentato, olio e aria al prezzemolo, insalatina di asparagi.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Cestino di seppia croccante</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Trancio di baccalà cotto a bassa temperatura</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">22,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Crudo di carciofi e bottarga, fondente di patate al nero, gel di lamponi.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Aromatizzato a timo, arancia e caffè, zucchine trombetta marinate e la loro crema, aglio nero, gel all'arancia.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Brasato di tonno al Nebbiolo</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">18,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Arrostino di pescatrice brasato</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">25,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Le sue verdure, polentina arrostita, aria di cipolla rossa.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Avvolto in guanciale di Patanegra, piselli freschi saltati con scalogno e aceto di lamponi, chips di patata viola.</p>
                 </article>
                 <article class="border-b border-slate-900/10 pb-7">
                   <div class="gap-4 sm:flex sm:items-start sm:justify-between">
-                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Medaglioni rollè di coniglio</h3>
-                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">15,00 €</span>
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Costolette di agnello alla brace</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">24,00 €</span>
                   </div>
-                  <p class="mt-3 leading-7 text-slate-600">Con il suo fondo bruno, pinoli, olive riviera, guanciale croccante, pomodorino confit e spuma al basilico cotta e cruda.</p>
+                  <p class="mt-3 leading-7 text-slate-600">Laccate alla senape e miele, fondo bruno, cuore di carciofo alla romana, crema di patate montata all'olio extravergine e fava tonka.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Pescato del giorno nella tradizionale cottura al sale</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">5,50 €/hg</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Servito con verdure di stagione saltate e maionese aromatizzata al limone, salsa di soia ed erba cipollina.</p>
+                  <p class="mt-2 text-sm font-medium text-slate-500">Per due persone.</p>
+                </article>
+                <article class="border-b border-slate-900/10 pb-7">
+                  <div class="gap-4 sm:flex sm:items-start sm:justify-between">
+                    <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-slate-950">Chateaubriand di tonno alla piastra</h3>
+                    <span class="mt-2 block whitespace-nowrap text-sm font-semibold text-slate-500 sm:mt-1">50,00 €</span>
+                  </div>
+                  <p class="mt-3 leading-7 text-slate-600">Accompagnato da patate rustiche aromatiche e salsa bernese, servito su pietra lavica calda.</p>
+                  <p class="mt-2 text-sm font-medium text-slate-500">Per due persone.</p>
                 </article>
               </div>
             </section>
@@ -212,16 +671,16 @@
       </div>
     </section>
 
-    <section class="bg-stone-200/70 px-5 py-16 sm:px-8 lg:px-10">
-      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12 lg:items-center">
-        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-5" data-reveal>
+    <section class="bg-stone-200/70 px-5 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
+        <div class="opacity-0 translate-y-8 transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 lg:col-span-6" data-reveal>
           <p class="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-sky-800">Cantina</p>
           <h2 class="font-['Playfair_Display'] text-4xl font-semibold text-slate-950">Bottiglie scelte per accompagnare la cucina.</h2>
           <p class="mt-6 leading-8 text-slate-600">La carta vini è disponibile come pagina dedicata, con bianchi, rosé, bollicine e rossi organizzati per sezione.</p>
         </div>
-        <div class="flex flex-col gap-4 sm:flex-row lg:col-span-6 lg:col-start-7">
-          <a href="carta-vini.html" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-transparent hover:text-slate-950">Apri carta vini</a>
-          <a href="tel:+390197703829" class="inline-flex items-center justify-center border border-slate-950/25 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:border-slate-950">Prenota</a>
+        <div class="flex flex-col gap-4 sm:flex-row lg:col-span-5 lg:col-start-8">
+          <a href="carta-vini.html" class="inline-flex items-center justify-center border border-slate-950 bg-slate-950 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:bg-transparent hover:text-slate-950">Apri carta vini</a>
+          <a href="tel:+390197703829" class="inline-flex items-center justify-center border border-slate-950/25 px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950 transition hover:border-slate-950">Prenota</a>
         </div>
       </div>
     </section>
@@ -230,59 +689,22 @@
   <footer class="border-t border-slate-900/10 bg-stone-100 px-5 py-14 sm:px-8 lg:px-10">
     <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 text-sm text-slate-600 md:flex-row md:items-center">
       <div>
-        <a href="index.html" aria-label="Coralì" class="font-['Morsal'] text-4xl font-normal leading-none tracking-wide text-slate-950">Coral<span class="relative inline-block pr-[0.03em]">i<span class="absolute -top-[0.02em] left-[0.12em] text-[0.34em] leading-none" aria-hidden="true">`</span></span></a>
-        <p class="mt-3">Menu ufficiale. Corso Cristoforo Colombo, 86, Varazze.</p>
+        <a href="index.html" aria-label="Coralì" class="inline-flex items-center">
+          <img src="img/logo/scritta-corali.svg" alt="Coralì" class="block h-11 w-auto sm:h-12">
+        </a>
+        <p class="mt-3">Cucina di mare contemporanea. Corso Cristoforo Colombo, 86, Varazze.</p>
       </div>
       <nav class="flex flex-wrap gap-5">
         <a class="transition hover:text-orange-700" href="index.html">Home</a>
+        <a class="transition hover:text-orange-700" href="menu.html">Menu</a>
         <a class="transition hover:text-orange-700" href="carta-vini.html">Carta vini</a>
+        <a class="transition hover:text-orange-700" href="index.html#location">Location</a>
         <a class="transition hover:text-orange-700" href="tel:+390197703829">019 770 3829</a>
-        <a class="transition hover:text-orange-700" href="#">Privacy</a>
+        <a class="transition hover:text-orange-700" href="mailto:giulia209@hotmail.it?subject=Privacy%20Coral%C3%AC">Privacy</a>
       </nav>
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.querySelector("[data-menu-toggle]");
-    const mobileMenu = document.querySelector("[data-mobile-menu]");
-
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!isOpen));
-        mobileMenu.classList.toggle("hidden", isOpen);
-      });
-
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          menuToggle.setAttribute("aria-expanded", "false");
-          mobileMenu.classList.add("hidden");
-        });
-      });
-    }
-
-    const revealItems = document.querySelectorAll("[data-reveal]");
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.remove("opacity-0", "translate-y-8");
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            observer.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.14 }
-      );
-
-      revealItems.forEach((item) => observer.observe(item));
-    } else {
-      revealItems.forEach((item) => {
-        item.classList.remove("opacity-0", "translate-y-8");
-        item.classList.add("opacity-100", "translate-y-0");
-      });
-    }
-  </script>
+  <script src="site.js?v=hero-smooth-2"></script>
 </body>
 </html>
