@@ -53,6 +53,10 @@ if (heroSlides.length > 1) {
     slide.dataset.motion = motions[index % motions.length];
     slide.style.setProperty("--hero-duration", `${8800 + (index % 4) * 450}ms`);
     slide.classList.toggle("is-active", index === activeIndex);
+
+    if (typeof slide.decode === "function") {
+      slide.decode().catch(() => {});
+    }
   });
 
   const showSlide = (nextIndex) => {
@@ -60,6 +64,11 @@ if (heroSlides.length > 1) {
     const nextSlide = heroSlides[nextIndex];
 
     if (!nextSlide || nextSlide === currentSlide) return;
+
+    const currentStyle = window.getComputedStyle(currentSlide);
+    currentSlide.style.transform = currentStyle.transform;
+    currentSlide.style.filter = currentStyle.filter;
+    currentSlide.style.animation = "none";
 
     currentSlide.classList.remove("is-active");
     currentSlide.classList.add("is-exiting");
@@ -71,6 +80,9 @@ if (heroSlides.length > 1) {
 
     window.setTimeout(() => {
       currentSlide.classList.remove("is-exiting");
+      currentSlide.style.removeProperty("transform");
+      currentSlide.style.removeProperty("filter");
+      currentSlide.style.removeProperty("animation");
     }, 2600);
 
     activeIndex = nextIndex;
