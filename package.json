@@ -1,0 +1,14 @@
+{
+  "name": "corali-varazze",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "tailwindcss -i assets/tailwind.css -o assets/site.css --minify",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "check:seo": "node scripts/check-seo.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "tailwindcss": "4.3.0"
+  }
+}

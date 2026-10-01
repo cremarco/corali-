@@ -1,0 +1,155 @@
+@import "tailwindcss" source(none);
+
+@source "../index.html";
+@source "../menu.html";
+@source "../carta-vini.html";
+@source "../galleria.html";
+@source "../accessibilita.html";
+@source "../site.js";
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  background: #fff;
+  color: #020617;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.skip-link:focus {
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  clip-path: none;
+}
+
+/* Text enlargement must not widen the grid or clip photo captions. */
+main :where(h1, h2, h3, p, a, figcaption) { overflow-wrap: anywhere; }
+main :where(.grid > *, .flex > *) { min-inline-size: 0; }
+main .flex > .tabular-nums { flex-shrink: 0; }
+main a { max-inline-size: 100%; }
+header > div > a:first-child { min-inline-size: 0; }
+header a,
+footer a { max-inline-size: 100%; overflow-wrap: anywhere; }
+header a { min-block-size: 44px; }
+header nav a,
+footer nav a { display: inline-flex; align-items: center; min-block-size: 44px; }
+#gallery .grid { grid-auto-rows: minmax(220px, auto); }
+#gallery .grid > article > img { position: absolute; inset: 0; }
+#immagini .grid { grid-auto-rows: minmax(230px, auto); }
+.photo-frame { display: grid; grid-template-columns: minmax(0, 1fr); }
+.photo-frame > img { position: absolute; inset: 0; }
+.photo-frame > figcaption,
+.photo-frame > .photo-caption {
+  position: relative;
+  grid-area: 1 / 1;
+  align-self: end;
+  justify-self: start;
+  max-inline-size: 100%;
+}
+.photo-caption { background: rgb(2 6 23 / 85%); }
+@media (min-width: 768px) {
+  #gallery .grid,
+  #immagini .grid { grid-auto-rows: minmax(260px, auto); }
+}
+
+/* Native disclosures keep navigation usable before JavaScript loads. */
+.site-mobile-navigation > summary,
+.section-navigation summary {
+  list-style: none;
+  cursor: pointer;
+}
+.site-mobile-navigation > summary::-webkit-details-marker,
+.section-navigation summary::-webkit-details-marker { display: none; }
+.site-mobile-navigation [data-mobile-menu] {
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  max-height: calc(100dvh - 5rem);
+  overflow-y: auto;
+}
+[data-mobile-menu] > div { gap: 0.25rem; }
+[data-mobile-menu] a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+[data-mobile-menu] a:last-child { justify-content: center; margin-top: 0.5rem; }
+.section-navigation {
+  position: fixed;
+  z-index: 40;
+  inset-inline: 1.25rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  color: #fff;
+  background: #020617;
+  box-shadow: 0 8px 24px rgb(2 6 23 / 20%);
+}
+.section-navigation summary {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.section-navigation summary svg { flex-shrink: 0; }
+.section-navigation summary > span { min-inline-size: 0; overflow-wrap: anywhere; }
+.section-current { margin-left: auto; font-size: 0.875rem; font-weight: 400; }
+.section-navigation[open] summary svg,
+.section-navigation details[open] summary svg { transform: rotate(180deg); }
+.section-links {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 100%;
+  max-height: min(60dvh, 28rem);
+  overflow-y: auto;
+  background: #020617;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  padding: 0.5rem;
+}
+.section-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.section-links a:hover,
+.section-links a[aria-current="location"] { background: #1e293b; }
+.menu-section-links a { display: flex; min-height: 44px; align-items: center; }
+:focus-visible { outline: 3px solid #c2410c; outline-offset: 4px; }
+.hero-site-header :focus-visible,
+.section-navigation :focus-visible { outline-color: #fed7aa; }
+:where(a, button, summary, [tabindex]) { scroll-margin-block: 6rem; }
+[data-reveal]:focus-within { opacity: 1; transform: none; transition: none; }
+html { scroll-padding-top: var(--site-header-offset, 6rem); }
+@media (max-width: 1023px) {
+  .has-section-navigation :where(a, button, summary, [tabindex]) { scroll-margin-bottom: 8rem; }
+  .has-section-navigation footer { padding-bottom: calc(7rem + env(safe-area-inset-bottom)); }
+}
+@media (forced-colors: active) {
+  :focus-visible { outline-color: Highlight; }
+  a[aria-label="Coralì, pagina iniziale"] > img { display: none; }
+  a[aria-label="Coralì, pagina iniziale"]::after {
+    content: "Coralì";
+    color: LinkText;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+  }
+  .skip-link,
+  .hero-motion-toggle,
+  .room-motion-toggle {
+    border: 1px solid ButtonText;
+    background: Canvas;
+    color: CanvasText;
+  }
+  .photo-caption { background: Canvas; color: CanvasText; }
+  .photo-caption :where(p, h3) { color: CanvasText; }
+}

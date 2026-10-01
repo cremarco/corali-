@@ -1,0 +1,12 @@
+/* Without JavaScript, show the final composition and keep all photos still. */
+.hero-slides,
+.hero-wordmark-contrast,
+.hero-scroll-cue { opacity: 1; animation: none; }
+.hero-slide.is-active,
+.hero-mask-slide.is-active { animation: none; transform: scale(1.04); }
+.hero-blue-curtain,
+.hero-logo-piece:not(.hero-logo-script-intro) { display: none; animation: none; }
+.hero-logo-script-intro { opacity: 0.12; animation: none; clip-path: none; transform: none; }
+.room-slide { opacity: 0; animation: none; transform: none; }
+.room-slide:first-child { opacity: 1; }
+.room-slide-indicator { display: none; }

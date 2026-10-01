@@ -1,7 +1,16 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /.impeccable/
+Disallow: /node_modules/
+Disallow: /scripts/
 Disallow: /tmp-image-review/
 Disallow: /Coral%C3%AC/
 Disallow: /Coralì/
+Disallow: /Corali%CC%80/
+Disallow: /assets/tailwind.css
+Disallow: /assets/images.json
+Disallow: /assets/social-previews.html
 
 Sitemap: https://www.coralivarazze.it/sitemap.xml
