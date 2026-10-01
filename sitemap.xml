@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.coralivarazze.it/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <image:image>
       <image:loc>https://www.coralivarazze.it/img/photo/hero/hero-purple-crisp-saucer.webp</image:loc>
     </image:image>
@@ -66,21 +66,21 @@
   </url>
   <url>
     <loc>https://www.coralivarazze.it/menu.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <image:image>
       <image:loc>https://www.coralivarazze.it/img/photo/plates/piatti-mare-tavola.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.coralivarazze.it/carta-vini.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <image:image>
       <image:loc>https://www.coralivarazze.it/img/photo/hero/hero-wine-selection.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.coralivarazze.it/galleria.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <image:image>
       <image:loc>https://www.coralivarazze.it/img/photo/plates/piatti-mare-tavola.webp</image:loc>
     </image:image>
@@ -123,6 +123,6 @@
   </url>
   <url>
     <loc>https://www.coralivarazze.it/accessibilita.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>
